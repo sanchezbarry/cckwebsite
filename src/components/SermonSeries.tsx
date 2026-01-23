@@ -2,7 +2,7 @@ import React from 'react';
 
 export const SermonSeries: React.FC = () => {
   return (
-    <section className="w-full max-w-[1200px] px-4 pt-16 md:pt-24 pb-12 mx-auto">
+    <section className="w-full max-w-300 px-4 pt-16 md:pt-24 pb-12 mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
         <div>
           <span className="text-primary font-bold font-display uppercase tracking-widest text-xs">Latest Message</span>
@@ -17,7 +17,7 @@ export const SermonSeries: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row items-stretch">
 
-                  <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/show/5JHkfZkqlaUqRxxVaU0Wqu?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                  <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/show/5JHkfZkqlaUqRxxVaU0Wqu?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
           {/* <div 
             className="w-full lg:w-3/5 min-h-[300px] lg:min-h-[450px] bg-cover bg-center relative overflow-hidden"
