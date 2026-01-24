@@ -25,7 +25,7 @@ const MINISTRIES: Ministry[] = [
 export const GetConnected: React.FC = () => {
   return (
     <section className="w-full bg-white dark:bg-surface-dark py-16 md:py-24 border-y border-slate-100 dark:border-slate-800">
-      <div className="max-w-[1200px] mx-auto px-4">
+      <div className="max-w-300 mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 dark:text-white mb-4">Get Connected</h2>
           <p className="text-slate-600 dark:text-slate-300 text-lg">Life is better together. Find your place in our community through groups, serving, and prayer.</p>

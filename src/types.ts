@@ -9,7 +9,6 @@ export interface Sermon {
   title: string;
   series: string;
   speaker: string;
-  date: string;
   imageUrl: string;
   category?: string;
 }

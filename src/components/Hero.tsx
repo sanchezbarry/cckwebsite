@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto animate-fade-in-up mt-16">
         <span className="mb-6 inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold font-display uppercase tracking-widest">
-          Sundays 9:00 AM & 11:00 AM
+          Sundays 10:30 AM
         </span>
         
         <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-black font-display leading-tight tracking-tight mb-8 drop-shadow-lg">

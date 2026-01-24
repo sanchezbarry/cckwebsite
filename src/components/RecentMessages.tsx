@@ -4,42 +4,39 @@ import { Sermon } from '../types';
 const RECENT_MESSAGES: Sermon[] = [
   {
     id: '1',
-    title: 'Walking in Faith',
+    title: 'The Vicar\'s Message',
     series: 'Faith & Culture',
-    speaker: 'Pastor Jane Smith',
-    date: 'Oct 17, 2023',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUYfCRmEj-wKoB2dEtUYvu86fG0jxf-ggsRF9_8OiQj2UipZ99uR8n6HtlJk2fMTGMWyFF8Tf2GreIL531EH4tLE5-pkU4_N2OT71e4s3t-2ZybIBB-WMf_DZrYVClmoAW0cFzsvyMzOG7tQ-HPr23mvRP41qaA-qGX4BHF-RZwSCa7SNds_hcfR4yanR0JPc8D58NaicpaKa-mwLCa67gJ7v43xrIiJi-G9YEvZHJFvVbc6GklATLz6eClAZGMY2rLV3qbc26Szpu',
-    category: 'Faith & Culture'
+    speaker: 'Welcome to our website! Regardless of how you found us or simply stumbled onto this page, we are just glad that you found your way here. We are a family church, but our definition embraces anyone who desires to encounter God\'s presence in a tangible manner. We hope to hear from you, so click on the tab that says \'Contact\' and we will get in touch with you.The Lord be with you!',
+    imageUrl: '/vicarmsg.jpg',
+    category: 'Ps Bertram'
   },
   {
     id: '2',
-    title: 'The Power of Together',
+    title: 'Service Times',
     series: 'Community',
-    speaker: 'Pastor John Doe',
-    date: 'Oct 10, 2023',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD2e992Kt5dXpG5Fmtpjf04Za27DkLuKQhadawRAB1nULtsdpSUKtPHtAeXZ4MC_zQza1PCjfoJRMClgyI-RYYA6jWNqk4jaAFrQ9tZKD-DXqMc8C0yh_Tp3EgYs1UaPlR_YHnWVKye_iyVmP0myVXEshz_HGUjx4NDrso9ngZzcm-iOlnKIGsEV31Bd55sqoDd4WexeQwyBKntcfoneodtak5aiJYiHxf0bnzmAa5tZbCiV-V13mCyfI7kE9aE-JHp7mfDXEPgRiou',
+    speaker: 'English Service: Sundays 10.30am | Agape Children\'s Ministry: Sundays, 10.30am | The Joshua Connection (Youth): Sundays 12.30pm | Filipino Fellowship: Sundays 1.30pm',
+    imageUrl: '/outside.jpg',
     category: 'Community'
   },
   {
     id: '3',
-    title: 'Serving with Joy',
-    series: 'Service',
-    speaker: 'Pastor Mike Brown',
-    date: 'Oct 03, 2023',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUHkkEudfUun5RSGGZIaOmSgHl_qqGWznl9CFnzUNUGaKbQy_pR-HbmfYf0G55YewNohIH_fK6M3g9bfdEar8XivAHBb1062BO3YAoV_GQRHdtpm-w97aPggTKX8Q67S1W1ALILUAzFEnA4hEi2LkvcBdcHr8I9QrMVKCblDlYyx9nHXmVxzFh1QQ10-HtbQNewRQY4opOnvjiWTC1RwDnZOV3eX-SJvKUIyyg3WTTpSEmfDgWSluA9NCugthf0v3xxHOZEEsvlsSB',
+    title: 'John 15:1-2',
+    series: 'Theme Verse 2026',
+    speaker: '“I am the true vine, and my Father is the vinedresser. 2 Every branch in me that does not bear fruit he takes away, and every branch that does bear fruit he prunes, that it may bear more fruit.”',
+    imageUrl: '/cross.jpg',
     category: 'Service'
   },
 ];
 
 export const RecentMessages: React.FC = () => {
   return (
-    <section className="w-full max-w-[1200px] px-4 pb-16 md:pb-24 mx-auto">
+    <section className="w-full max-w-300 px-4 pb-16 md:pb-24 mx-auto">
       <div className="flex items-center gap-4 mb-10">
-        <h3 className="text-xl md:text-2xl font-bold font-display text-slate-900 dark:text-white">Recent Messages</h3>
+        <h3 className="text-xl md:text-2xl font-bold font-display text-slate-900 dark:text-white">Our Church</h3>
         <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
-        <a href="#" className="text-sm font-bold font-display text-primary hover:underline flex items-center gap-1 group">
+        {/* <a href="#" className="text-sm font-bold font-display text-primary hover:underline flex items-center gap-1 group">
           Sermon Library <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-        </a>
+        </a> */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -51,9 +48,9 @@ export const RecentMessages: React.FC = () => {
                 style={{ backgroundImage: `url('${msg.imageUrl}')` }}
               ></div>
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                <div className="size-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 border border-white/40">
+                {/* <div className="size-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 border border-white/40">
                   <span className="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="flex flex-col">
@@ -61,7 +58,7 @@ export const RecentMessages: React.FC = () => {
               <h4 className="font-bold font-display text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors leading-tight mb-2">
                 {msg.title}
               </h4>
-              <p className="text-sm text-slate-500 font-medium">{msg.speaker} • {msg.date}</p>
+              <p className="text-sm text-slate-500 font-medium">{msg.speaker}</p>
             </div>
           </div>
         ))}

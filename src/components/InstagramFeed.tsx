@@ -17,11 +17,14 @@ export const InstagramFeed: React.FC = () => {
           <span className="material-symbols-outlined text-3xl">photo_camera</span>
         </span>
         <h2 className="text-3xl font-bold font-display text-slate-900 dark:text-white mb-2">Follow Us on Instagram</h2>
-        <a href="#" className="text-pink-600 dark:text-pink-400 font-bold hover:underline transition-colors text-lg">@GraceCommunity</a>
+        <a href="#" className="text-pink-600 dark:text-pink-400 font-bold hover:underline transition-colors text-lg">@sg.cck</a>
       </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto md:h-[280px]">
-        {IMAGES.map((src, index) => (
+        
+      {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto md:h-70"> */}
+         <div>
+        
+<iframe src="https://widgets.sociablekit.com/instagram-feed/iframe/25647260"  width="100%" height="200%"></iframe>
+        {/* {IMAGES.map((src, index) => (
           <div key={index} className="relative group aspect-square md:aspect-auto overflow-hidden bg-slate-100 dark:bg-slate-800 cursor-pointer">
             <div 
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -31,7 +34,7 @@ export const InstagramFeed: React.FC = () => {
               <span className="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 text-3xl">favorite</span>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </section>
   );
