@@ -14,10 +14,11 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <Navbar />
-      <main className="flex-grow">
+      <main className="grow">
         <Hero />
-        <SermonSeries />
         <RecentMessages />
+        <SermonSeries />
+
         <GetConnected />
         <Events />
         <VisitUs />

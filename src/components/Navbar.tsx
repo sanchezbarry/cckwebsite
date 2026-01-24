@@ -5,15 +5,16 @@ import { NavItem } from '../types';
 import Image from 'next/image'; 
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'About', href: '#', hasDropdown: true },
+  { label: 'About', href: '#', },
+    { label: 'Sermons', href: '#', },
   { label: 'Ministries', href: '#', hasDropdown: true },
-  { label: 'Resources', href: '#', hasDropdown: true },
-  { label: 'Events', href: '#' },
-  { label: 'Give', href: '#' },
+  { label: 'Chaplaincy', href: '#', },
+    { label: 'Events', href: '#', },
+  { label: 'Contact', href: '#' },
+  { label: 'Member\' Page', href: '#' },
 ];
 
 interface NavbarProps {}
-
 interface NavbarState {
   isScrolled: boolean;
   isMobileMenuOpen: boolean;

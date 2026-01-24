@@ -27,11 +27,11 @@ const EVENTS: Event[] = [
 
 export const Events: React.FC = () => {
   return (
-    <section className="w-full max-w-[1200px] px-4 py-16 md:py-24 mx-auto">
+    <section className="w-full max-w-300 px-4 py-16 md:py-24 mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
         <div>
           <h2 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold font-display">Latest News & Events</h2>
-          <p className="text-slate-500 mt-3 text-lg">Stay up to date with what's happening at Grace.</p>
+          <p className="text-slate-500 mt-3 text-lg">Stay up to date with what's happening at CCK.</p>
         </div>
         <button className="h-12 px-6 border border-slate-300 dark:border-slate-700 rounded-lg font-bold font-display text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200">
           View All Events
@@ -41,7 +41,7 @@ export const Events: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {EVENTS.map((event) => (
           <article key={event.id} className="flex flex-col group cursor-pointer">
-            <div className="overflow-hidden rounded-2xl aspect-[4/3] mb-5 bg-slate-200 relative shadow-sm">
+            <div className="overflow-hidden rounded-2xl aspect-4/3 mb-5 bg-slate-200 relative shadow-sm">
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url('${event.imageUrl}')` }}

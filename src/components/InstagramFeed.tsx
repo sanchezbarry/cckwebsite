@@ -17,7 +17,7 @@ export const InstagramFeed: React.FC = () => {
           <span className="material-symbols-outlined text-3xl">photo_camera</span>
         </span>
         <h2 className="text-3xl font-bold font-display text-slate-900 dark:text-white mb-2">Follow Us on Instagram</h2>
-        <a href="#" className="text-pink-600 dark:text-pink-400 font-bold hover:underline transition-colors text-lg">@sg.cck</a>
+        <a href="https://www.instagram.com/sg.cck/" className="text-pink-600 dark:text-pink-400 font-bold hover:underline transition-colors text-lg">@sg.cck</a>
       </div>
         
       {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto md:h-70"> */}

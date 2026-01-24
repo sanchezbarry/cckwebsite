@@ -3,22 +3,22 @@ import { Ministry } from '../types';
 
 const MINISTRIES: Ministry[] = [
   {
-    title: 'Join a Group',
+    title: 'Join a Cell Group',
     description: 'Connect with others and grow in your faith in a smaller setting.',
     icon: 'diversity_3',
-    action: 'Find a Group'
+    action: 'Find a Cell Group'
   },
   {
-    title: 'Serve the City',
+    title: 'Missions & Outreach',
     description: 'Use your gifts to make a difference in our church and community.',
     icon: 'volunteer_activism',
     action: 'Join a Team'
   },
   {
-    title: 'Request Prayer',
-    description: 'How can we pray for you? Our team is ready to stand with you.',
+    title: 'Sound & Music Ministry',
+    description: 'Serving our congregation by helping them enter into the presence of the Lord in praise, worship and the Word.',
     icon: 'prayer_times',
-    action: 'Submit Request'
+    action: 'Find out more'
   }
 ];
 

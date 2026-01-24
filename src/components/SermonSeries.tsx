@@ -2,7 +2,7 @@ import React from 'react';
 
 export const SermonSeries: React.FC = () => {
   return (
-    <section className="w-full max-w-300 px-4 pt-16 md:pt-24 pb-12 mx-auto">
+    <section className="w-full max-w-300 px-4  md:pt-10 pb-12 mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
         <div>
           <span className="text-primary font-bold font-display uppercase tracking-widest text-xs">Sunday Sermons</span>

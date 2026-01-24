@@ -11,17 +11,17 @@ export const Footer: React.FC = () => {
               <h3 className="text-xl font-bold font-display tracking-tight">Grace Community</h3>
             </div>
             <div className="text-slate-400 text-sm leading-relaxed">
-              <p>123 Faith Avenue</p>
-              <p>Springfield, ST 12345</p>
-              <p className="mt-4 text-white font-medium">(555) 123-4567</p>
+              <p>St Margaret’s School (Primary) School</p>
+              <p>136 Sophia Rd, Singapore 228197</p>
+              {/* <p className="mt-4 text-white font-medium">(555) 123-4567</p> */}
               <p className="text-primary hover:text-white transition-colors cursor-pointer">hello@gracecommunity.com</p>
             </div>
             <div className="flex gap-4 mt-2">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all">
-                <span className="material-symbols-outlined text-lg">public</span>
+              <a href="https://www.instagram.com/sg.cck/" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all">
+                <span className="material-symbols-outlined text-lg">photo_camera</span>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all">
-                <span className="material-symbols-outlined text-lg">videocam</span>
+              <a href="https://open.spotify.com/show/5JHkfZkqlaUqRxxVaU0Wqu?si=bc6aa8f050454978" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all">
+                <span className="material-symbols-outlined text-lg">podcasts</span>
               </a>
             </div>
           </div>
@@ -30,21 +30,21 @@ export const Footer: React.FC = () => {
             <h4 className="text-lg font-bold font-display mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-1 after:bg-primary after:rounded-full">Quick Links</h4>
             <ul className="flex flex-col gap-4 text-slate-400 text-sm font-medium">
               <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">About Us</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Our Beliefs</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Leadership</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Plan a Visit</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Give Online</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Sermons</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Member's Page</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Chaplaincy</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Events</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-bold font-display mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-1 after:bg-primary after:rounded-full">Ministries</h4>
             <ul className="flex flex-col gap-4 text-slate-400 text-sm font-medium">
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Grace Kids</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Student Ministry</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Small Groups</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Outreach</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Counseling</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Cell Groups</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Music & Sound</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Missons & Outreach</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Youth Fellowship</a></li>
+              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Agape Children</a></li>
             </ul>
           </div>
 
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-xs font-medium">© 2024 Grace Community Church. All rights reserved.</p>
+          <p className="text-slate-500 text-xs font-medium">© 2026 Chapel of Christ the King. All rights reserved.</p>
           <div className="flex gap-8 text-slate-500 text-xs font-medium">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

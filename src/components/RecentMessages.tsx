@@ -13,10 +13,10 @@ const RECENT_MESSAGES: Sermon[] = [
   {
     id: '2',
     title: 'Service Times',
-    series: 'Community',
+    series: 'Service Information',
     speaker: 'English Service: Sundays 10.30am | Agape Children\'s Ministry: Sundays, 10.30am | The Joshua Connection (Youth): Sundays 12.30pm | Filipino Fellowship: Sundays 1.30pm',
     imageUrl: '/outside.jpg',
-    category: 'Community'
+    category: 'Service Information'
   },
   {
     id: '3',
@@ -24,13 +24,13 @@ const RECENT_MESSAGES: Sermon[] = [
     series: 'Theme Verse 2026',
     speaker: '“I am the true vine, and my Father is the vinedresser. 2 Every branch in me that does not bear fruit he takes away, and every branch that does bear fruit he prunes, that it may bear more fruit.”',
     imageUrl: '/cross.jpg',
-    category: 'Service'
+    category: 'Theme Verse 2026'
   },
 ];
 
 export const RecentMessages: React.FC = () => {
   return (
-    <section className="w-full max-w-300 px-4 pb-16 md:pb-24 mx-auto">
+    <section className="w-full max-w-300 pt-16 px-4 pb-16 md:pb-24 mx-auto">
       <div className="flex items-center gap-4 mb-10">
         <h3 className="text-xl md:text-2xl font-bold font-display text-slate-900 dark:text-white">Our Church</h3>
         <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
