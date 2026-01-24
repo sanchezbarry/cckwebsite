@@ -5,7 +5,7 @@ import { NavItem } from '../types';
 import Image from 'next/image'; 
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'About', href: '#', },
+  { label: 'About', href: '/about-us', },
     { label: 'Sermons', href: '#', },
   { label: 'Ministries', href: '#', hasDropdown: true },
   { label: 'Chaplaincy', href: '#', },
@@ -43,7 +43,9 @@ export default function Navbar(){
       <div className="px-4 md:px-8 lg:px-12 flex items-center justify-between h-16 max-w-350 mx-auto">
         <div className="flex items-center gap-3 cursor-pointer group">
           <div className="text-primary group-hover:scale-110 transition-transform duration-300">
-            <Image src="/transparentlogo.png" alt="Church Logo" width={32} height={32} />
+            <a href='/'>
+            <Image  src="/transparentlogo.png" alt="Church Logo" width={32} height={32} />
+            </a>
             {/* <span className="material-symbols-outlined text-4xl">church</span> */}
           </div>
           <h2 className={`text-xl font-bold font-display tracking-tight transition-colors ${isScrolled ? 'text-slate-900 dark:text-white' : 'text-white'}`}>
