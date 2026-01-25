@@ -6,9 +6,9 @@ import { RecentMessages } from '@/components/RecentMessages';
 import { GetConnected } from '@/components/GetConnected';
 import { Events } from '@/components/Events';
 import { VisitUs } from '@/components/VisitUs';
-import { InstagramFeed } from '@/components/InstagramFeed';
 import { Footer } from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import People from '@/components/People';
 
 export default function AboutUs() {
   return (
@@ -17,6 +17,7 @@ export default function AboutUs() {
       <main className="grow flex flex-col items-center w-full">
         <AboutHero />
          <VisionMission />
+         <People />
       </main>
       <Footer />
     </div>

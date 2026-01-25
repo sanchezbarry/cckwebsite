@@ -8,7 +8,7 @@ const VisionMission: React.FC = () => {
           Our Vision & Mission
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-base max-w-2xl">
-          Driven by our faith and commitment to the community, we strive to make a lasting impact.
+          CCK is a parish of the Anglican Diocese of Singapore
         </p>
       </div>
       
@@ -19,9 +19,9 @@ const VisionMission: React.FC = () => {
             <span className="material-symbols-outlined text-3xl">visibility</span>
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="text-xl font-bold text-[#111418] dark:text-white">Our Vision</h3>
+            <h3 className="text-xl font-bold text-[#111418] dark:text-white">CCK is a parish of the Anglican Diocese of Singapore</h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              To see our city transformed by the Gospel through authentic community, sacrificial service, and unwavering hope.
+              The Diocese is led by Bp Dr Titus Chung. CCK believes in the Holy Scriptures, and in such teachings of the ancient Fathers and Councils of the Church as are agreeable to the said Scriptures. In particular such doctrines are to be found in the 39 Articles of Religion, the Book of Common Prayer, and the Ordinal."
             </p>
           </div>
         </div>
@@ -32,9 +32,9 @@ const VisionMission: React.FC = () => {
             <span className="material-symbols-outlined text-3xl">volunteer_activism</span>
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="text-xl font-bold text-[#111418] dark:text-white">Our Mission</h3>
+            <h3 className="text-xl font-bold text-[#111418] dark:text-white">Our Leadership</h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              To love God wholeheartedly, love people unconditionally, and make disciples who make disciples.
+              CCK is headed by our Vicar Revd Bertram Cheong who is assisted by the Vicar's Warden, People's Warden and the Parochial Church Council (PCC) - a body of lay people appointed by members.
             </p>
           </div>
         </div>
