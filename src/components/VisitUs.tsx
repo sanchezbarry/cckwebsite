@@ -12,7 +12,7 @@ export const VisitUs: React.FC = () => {
   useEffect(() => {
     // Initialize EmailJS with your public key
     // Replace with your actual EmailJS public key from emailjs.com
-    emailjs.init('YOUR_PUBLIC_KEY');
+    emailjs.init('NI8BrDux15_Rn2F2R');
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -34,7 +34,7 @@ export const VisitUs: React.FC = () => {
     try {
       await emailjs.send(
         'service_6hzu3da', // Replace with your EmailJS service ID
-        'template_2ah4tay', // Replace with your EmailJS template ID
+        'template_27xh3iy', // Replace with your EmailJS template ID
         {
           from_name: formData.name,
           from_email: formData.email,
