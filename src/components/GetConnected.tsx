@@ -1,7 +1,7 @@
 import React from 'react';
-import { Ministry } from '../types';
+import { Ministry, MinistryHome } from '../types';
 
-const MINISTRIES: Ministry[] = [
+const MINISTRIES: MinistryHome[] = [
   {
     title: 'Join a Cell Group',
     description: 'Connect with others and grow in your faith in a smaller setting.',

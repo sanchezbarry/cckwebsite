@@ -21,7 +21,7 @@ export interface Event {
   imageUrl: string;
 }
 
-export interface Ministry {
+export interface MinistryHome {
   title: string;
   description: string;
   icon: string;
@@ -37,4 +37,6 @@ export interface Ministry {
   description: string;
   imageUrl: string;
   alt: string;
+  icon: string;
+  action: string;
 }
