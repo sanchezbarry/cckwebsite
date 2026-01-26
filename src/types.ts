@@ -27,3 +27,14 @@ export interface Ministry {
   icon: string;
   action: string;
 }
+
+export interface Ministry {
+  id: number;
+  title: string;
+  tag: string;
+  tagColor: string;
+  tagTextColor: string;
+  description: string;
+  imageUrl: string;
+  alt: string;
+}

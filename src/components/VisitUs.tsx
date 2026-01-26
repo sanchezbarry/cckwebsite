@@ -11,7 +11,7 @@ export const VisitUs: React.FC = () => {
 
   useEffect(() => {
     // Initialize EmailJS with your public key
-    // Replace with your actual EmailJS public key from emailjs.com
+    // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
     emailjs.init('NI8BrDux15_Rn2F2R');
   }, []);
 
@@ -48,8 +48,7 @@ export const VisitUs: React.FC = () => {
       if (formRef.current) formRef.current.reset();
     } catch (error) {
       console.error('Email send error:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
-      setFeedback({ type: 'error', message: errorMessage });
+      setFeedback({ type: 'error', message: 'Failed to send message. Please try again.' });
     } finally {
       setLoading(false);
     }

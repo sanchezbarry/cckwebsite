@@ -1,0 +1,112 @@
+import { Ministry } from '@/types';
+
+export const MINISTRIES: Ministry[] = [
+  {
+    id: 1,
+    title: "Agape Children",
+    tag: "Ages 0-11",
+    tagColor: "bg-blue-100",
+    tagTextColor: "text-blue-800",
+    description: "Fun, safe, and faith-filled environments where kids can learn about Jesus on their level.",
+    imageUrl: "/agape.jpg",
+    alt: "Children playing with colorful blocks",
+    icon: "👶",
+    action: "Learn more"
+  },
+  {
+    id: 2,
+    title: "Youth Ministry",
+    tag: "Grades 6-12",
+    tagColor: "bg-purple-100",
+    tagTextColor: "text-purple-800",
+    description: "Empowering the next generation to own their faith through energetic services and small groups.",
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrpnVyfoM_H61H91swRS-ocn95Hx9NkFMWqXaDcfm6Fggy37YJn66W0Qbkfm4dIff8hSxl3lFsafdytCw8RnPRtfdbMxl0WF7exwW_kwIFYu40kO5xpBtAJMUn7IgHlP4THgkXVYn6K4hLsqjt8Z6UQa7kmuVxEZc6PRMtL9SXmGXNQ356ifCjGAhFmh6zvEMNBlCEUhpVD--nu8vf9YZQzrCS6F2eED9shv6I2FweIIzXIAb_Pu9rsTILrKvZW75L4ZKKHYX_3ZqL",
+    alt: "Teenagers laughing in a group",
+    icon: "🎸",
+    action: "Learn more"
+  },
+  {
+    id: 3,
+    title: "Cell Groups",
+    tag: "Community",
+    tagColor: "bg-green-100",
+    tagTextColor: "text-green-800",
+    description: "Doing life together in homes across the city. Find a group that fits your schedule and season of life.",
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn5tDV-97oIwIV5MGIJRGaO1l4XHaE2N9JD7kt7PzHtJr5vcNxlKCEtOREJ_L4A4zArHgSG5zRCgGCnIuuxWb99WlwmP_ZTsK7I_N_H9NRIycsSd_OxoRq_F1fSFETldKp6aS5qFhVyvXd51hn7-jljBKHP_d3u-a2nyhuFEW37dhrxN01Xvgve2tXXWRnqreNp0smr9yxjQSM19djU9S40_DZnfqLYWtsaiABjV7nahALNbE7BY3Yjcr-Ha2SfXN6-qEmzakqRtDx",
+    alt: "Adults sharing a meal",
+    icon: "🤝",
+    action: "Learn more"
+  },
+  {
+    id: 4,
+    title: "Music & Sound",
+    tag: "Serve",
+    tagColor: "bg-orange-100",
+    tagTextColor: "text-orange-800",
+    description: "Using our gifts to glorify God through music, production, photography, and visual arts.",
+    imageUrl: "/worship.jpg",
+    alt: "Musician playing guitar",
+    icon: "🎨",
+    action: "Learn more"
+  },
+  {
+    id: 5,
+    title: "Missions & Outreach",
+    tag: "Service",
+    tagColor: "bg-red-100",
+    tagTextColor: "text-red-800",
+    description: "Serving our local community and showing God's love through practical acts of kindness.",
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDdCosV_Om9mUbWasBEop5ixAoE_497ay7mqZukvDdk2YTphK2x43hhIcmgt426kCtBJ1AwYVpvYLEdOxGBgiYcYkhARfDa_U5Cp2wHu0E1sEAMuEPxnXYCzASdKUEc4hcojw4N5W3ohoSqicV9q3sEijDx5JEt2yhrpzOnCj_KURVrtzCr0mJEPvdCV3ISxjPaVVw6eSV_2SbeW_mhEx_5k2xTOAKSfC2ilw0xt-_EW89HU2CYJk8LIbTPAFqSqjZLYDIIS9DdZwDC",
+    alt: "Volunteers handing out food",
+    icon: "🤲",
+    action: "Learn more"
+  },
+  {
+    id: 6,
+    title: "Filipino Fellowship",
+    tag: "18-30",
+    tagColor: "bg-yellow-100",
+    tagTextColor: "text-yellow-800",
+    description: "Building authentic community and navigating adulthood together for ages 18-30.",
+    imageUrl: "/filipinoweb.jpg",
+    alt: "Group of young adults in cafe",
+    icon: "☕",
+    action: "Learn more"
+  },
+  {
+    id: 7,
+    title: "Men's Ministry",
+    tag: "Adults",
+    tagColor: "bg-slate-100",
+    tagTextColor: "text-slate-800",
+    description: "Strengthening men to be spiritual leaders in their homes and workplaces through mentorship.",
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAwXJs7n92xhWS9o4zRKXek03rumS_NOT4cJ3fMHt6952Q82YMTjM4Ry1hTgOZM0fzlgbUd8kBm8AZkCTrAndGcyTWTu_6_3bYdAPGgqn8Iv8sop8jjOl1y87-P8kfrqrdTdthQLYeiQVfazhMTDsgz5agZiJSoSYLGszvi6WoKVuuAZR0KWtMA_i8nO54Xxj419oZeq_EpxYhnKZ3z7E2eYRDurNu-M8kxkjc8i4tEmmof4flD6__03_loKt3xq3d9V0csOIAdOkMD",
+    alt: "Men sitting around campfire",
+    icon: "👨",
+    action: "Learn more"
+  },
+  {
+    id: 8,
+    title: "Women's Ministry",
+    tag: "Adults",
+    tagColor: "bg-pink-100",
+    tagTextColor: "text-pink-800",
+    description: "A sisterhood of believers encouraging one another through retreats, studies, and events.",
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9DteneI_cS8tZzcw1zIgnYIPDu3ngG-f6WZUYD3U1fu88khcxQyAi7sNdNQixDe5cYBqkgfBiI1OWyUYZTAtC4DsH5qMHysQKWlwn6y4VjVfU71O2c0sD5CGMf99qasiPRsr2J2KB0C_mfslQZYXwRJ7WN9hRBRNOCs4Lyv-TGXbtGcjusNR4NN56RICmNpdZPs-QqJZCwW9Dl6r3wcgyXdxV3rQJ49RBUJHWO3g1WERTZqLVjqE1ZXRvOaUjGwPEzL5sLD-BW8qs",
+    alt: "Women having bible study",
+    icon: "👩",
+    action: "Learn more"
+  },
+  // {
+  //   id: 9,
+  //   title: "Prayer Team",
+  //   tag: "Care",
+  //   tagColor: "bg-indigo-100",
+  //   tagTextColor: "text-indigo-800",
+  //   description: "Dedicated intercessors available to pray with you and lift up the needs of our community.",
+  //   imageUrl: "https://images.unsplash.com/photo-1544427920-c49ccfb85579?q=80&w=1000&auto=format&fit=crop",
+  //   alt: "Hands clasped in prayer",
+  //   icon: "🙏",
+  //   action: "Learn more"
+  // }
+];

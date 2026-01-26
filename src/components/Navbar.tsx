@@ -7,7 +7,7 @@ import Image from 'next/image';
 const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '/about-us', },
     { label: 'Sermons', href: '#', },
-  { label: 'Ministries', href: '#', hasDropdown: true },
+  { label: 'Ministries', href: '/ministry', hasDropdown: true },
   { label: 'Chaplaincy', href: '#', },
     { label: 'Events', href: '#', },
   { label: 'Contact', href: '#' },
