@@ -6,19 +6,22 @@ const MINISTRIES: MinistryHome[] = [
     title: 'Join a Cell Group',
     description: 'Connect with others and grow in your faith in a smaller setting.',
     icon: 'diversity_3',
-    action: 'Find a Cell Group'
+    action: 'Find a Cell Group',
+    link: '#'
   },
   {
     title: 'Missions & Outreach',
     description: 'Use your gifts to make a difference in our church and community.',
     icon: 'volunteer_activism',
-    action: 'Join a Team'
+    action: 'Join a Team',
+    link: '#'
   },
   {
-    title: 'Sound & Music Ministry',
+    title: 'Ministries',
     description: 'Serving our congregation by helping them enter into the presence of the Lord in praise, worship and the Word.',
     icon: 'prayer_times',
-    action: 'Find out more'
+    action: 'Find out more',
+    link: '/ministry'
   }
 ];
 
@@ -42,7 +45,7 @@ export const GetConnected: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white mb-3">{item.title}</h3>
               <p className="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">{item.description}</p>
-              <a href="#" className="mt-auto text-primary font-bold font-display text-sm hover:underline flex items-center gap-1">
+              <a href={item.link} className="mt-auto text-primary font-bold font-display text-sm hover:underline flex items-center gap-1">
                 {item.action} <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
             </div>

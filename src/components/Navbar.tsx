@@ -6,10 +6,24 @@ import Image from 'next/image';
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '/about-us', },
-    { label: 'Sermons', href: '#', },
-  { label: 'Ministries', href: '/ministry', hasDropdown: true },
+  { label: 'Sermons', href: '#', },
+  { 
+    label: 'Ministries', 
+    href: '/ministry', 
+    hasDropdown: true,
+    dropdownItems: [
+      { label: 'Agape Children', href: '#' },
+      { label: 'Youth Ministry', href: '#' },
+      { label: 'Filipino Fellowship', href: '#' },
+      { label: 'Cell Groups', href: '/ministry/cellgroups' },
+      { label: 'Men\'s Ministry', href: '#' },
+      { label: 'Women\'s Ministry', href: '#' },
+      { label: 'Missions & Outreach', href: '#' },
+      { label: 'Music & Sound Ministry', href: '#' },
+    ]
+  },
   { label: 'Chaplaincy', href: '#', },
-    { label: 'Events', href: '#', },
+  { label: 'Events', href: '#', },
   { label: 'Contact', href: '#' },
   { label: 'Member\' Page', href: '#' },
 ];
@@ -67,9 +81,24 @@ export default function Navbar(){
                   {item.label}
                 </a>
                 {item.hasDropdown && (
-                  <span className={`material-symbols-outlined text-sm transition-colors ${
+                  <span className={`material-symbols-outlined text-sm transition-transform group-hover:rotate-180 duration-300 ${
                     isScrolled ? 'text-slate-400' : 'text-white/70'
                   }`}>expand_more</span>
+                )}
+                
+                {/* Desktop Dropdown Menu */}
+                {item.hasDropdown && item.dropdownItems && (
+                  <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-[#1a2332] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                    {item.dropdownItems.map((dropdownItem) => (
+                      <a
+                        key={dropdownItem.label}
+                        href={dropdownItem.href}
+                        className="block px-4 py-2 text-sm font-display text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                      >
+                        {dropdownItem.label}
+                      </a>
+                    ))}
+                  </div>
                 )}
               </div>
             ))}
@@ -97,14 +126,32 @@ export default function Navbar(){
         <div className="lg:hidden absolute top-full left-0 w-full bg-white dark:bg-[#101922] border-t border-slate-100 dark:border-slate-800 shadow-xl animate-fade-in-up">
           <div className="flex flex-col p-6 gap-4">
             {NAV_ITEMS.map((item: NavItem) => (
-              <a 
-                key={item.label}
-                href={item.href}
-                className="text-lg font-bold font-display text-slate-800 dark:text-slate-100 hover:text-primary dark:hover:text-primary flex justify-between items-center"
-              >
-                {item.label}
-                {item.hasDropdown && <span className="material-symbols-outlined text-slate-400">chevron_right</span>}
-              </a>
+              <div key={item.label}>
+                <div className="flex justify-between items-center">
+                  <a 
+                    href={item.href}
+                    className="text-lg font-bold font-display text-slate-800 dark:text-slate-100 hover:text-primary dark:hover:text-primary"
+                  >
+                    {item.label}
+                  </a>
+                  {item.hasDropdown && <span className="material-symbols-outlined text-slate-400">chevron_right</span>}
+                </div>
+                
+                {/* Mobile Dropdown Items */}
+                {item.hasDropdown && item.dropdownItems && (
+                  <div className="ml-4 mt-2 flex flex-col gap-2 border-l-2 border-slate-200 dark:border-slate-700 pl-4">
+                    {item.dropdownItems.map((dropdownItem) => (
+                      <a
+                        key={dropdownItem.label}
+                        href={dropdownItem.href}
+                        className="text-sm font-display text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+                      >
+                        {dropdownItem.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <button className="bg-primary hover:bg-blue-600 text-white font-display text-base font-bold h-12 w-full rounded-lg mt-4 transition-colors">
               Plan a Visit

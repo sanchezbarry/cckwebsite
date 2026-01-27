@@ -2,6 +2,12 @@ export interface NavItem {
   label: string;
   href: string;
   hasDropdown?: boolean;
+  dropdownItems?: DropdownItem[];
+}
+
+export interface DropdownItem {
+  label: string;
+  href: string;
 }
 
 export interface Sermon {
@@ -26,6 +32,7 @@ export interface MinistryHome {
   description: string;
   icon: string;
   action: string;
+  link: string;
 }
 
 export interface Ministry {
