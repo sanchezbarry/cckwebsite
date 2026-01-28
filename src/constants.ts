@@ -11,7 +11,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "/agape.jpg",
     alt: "Children playing with colorful blocks",
     icon: "👶",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/agape"
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrpnVyfoM_H61H91swRS-ocn95Hx9NkFMWqXaDcfm6Fggy37YJn66W0Qbkfm4dIff8hSxl3lFsafdytCw8RnPRtfdbMxl0WF7exwW_kwIFYu40kO5xpBtAJMUn7IgHlP4THgkXVYn6K4hLsqjt8Z6UQa7kmuVxEZc6PRMtL9SXmGXNQ356ifCjGAhFmh6zvEMNBlCEUhpVD--nu8vf9YZQzrCS6F2eED9shv6I2FweIIzXIAb_Pu9rsTILrKvZW75L4ZKKHYX_3ZqL",
     alt: "Teenagers laughing in a group",
     icon: "🎸",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/youth"
   },
   {
     id: 3,
@@ -35,7 +37,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn5tDV-97oIwIV5MGIJRGaO1l4XHaE2N9JD7kt7PzHtJr5vcNxlKCEtOREJ_L4A4zArHgSG5zRCgGCnIuuxWb99WlwmP_ZTsK7I_N_H9NRIycsSd_OxoRq_F1fSFETldKp6aS5qFhVyvXd51hn7-jljBKHP_d3u-a2nyhuFEW37dhrxN01Xvgve2tXXWRnqreNp0smr9yxjQSM19djU9S40_DZnfqLYWtsaiABjV7nahALNbE7BY3Yjcr-Ha2SfXN6-qEmzakqRtDx",
     alt: "Adults sharing a meal",
     icon: "🤝",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/cellgroups"
   },
   {
     id: 4,
@@ -47,7 +50,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "/worship.jpg",
     alt: "Musician playing guitar",
     icon: "🎨",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/musicandsound"
   },
   {
     id: 5,
@@ -59,7 +63,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDdCosV_Om9mUbWasBEop5ixAoE_497ay7mqZukvDdk2YTphK2x43hhIcmgt426kCtBJ1AwYVpvYLEdOxGBgiYcYkhARfDa_U5Cp2wHu0E1sEAMuEPxnXYCzASdKUEc4hcojw4N5W3ohoSqicV9q3sEijDx5JEt2yhrpzOnCj_KURVrtzCr0mJEPvdCV3ISxjPaVVw6eSV_2SbeW_mhEx_5k2xTOAKSfC2ilw0xt-_EW89HU2CYJk8LIbTPAFqSqjZLYDIIS9DdZwDC",
     alt: "Volunteers handing out food",
     icon: "🤲",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/missions"
   },
   {
     id: 6,
@@ -71,7 +76,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "/filipinoweb.jpg",
     alt: "Group of young adults in cafe",
     icon: "☕",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/filipinofellowship"
   },
   {
     id: 7,
@@ -83,7 +89,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAwXJs7n92xhWS9o4zRKXek03rumS_NOT4cJ3fMHt6952Q82YMTjM4Ry1hTgOZM0fzlgbUd8kBm8AZkCTrAndGcyTWTu_6_3bYdAPGgqn8Iv8sop8jjOl1y87-P8kfrqrdTdthQLYeiQVfazhMTDsgz5agZiJSoSYLGszvi6WoKVuuAZR0KWtMA_i8nO54Xxj419oZeq_EpxYhnKZ3z7E2eYRDurNu-M8kxkjc8i4tEmmof4flD6__03_loKt3xq3d9V0csOIAdOkMD",
     alt: "Men sitting around campfire",
     icon: "👨",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/mens"
   },
   {
     id: 8,
@@ -95,7 +102,8 @@ export const MINISTRIES: Ministry[] = [
     imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9DteneI_cS8tZzcw1zIgnYIPDu3ngG-f6WZUYD3U1fu88khcxQyAi7sNdNQixDe5cYBqkgfBiI1OWyUYZTAtC4DsH5qMHysQKWlwn6y4VjVfU71O2c0sD5CGMf99qasiPRsr2J2KB0C_mfslQZYXwRJ7WN9hRBRNOCs4Lyv-TGXbtGcjusNR4NN56RICmNpdZPs-QqJZCwW9Dl6r3wcgyXdxV3rQJ49RBUJHWO3g1WERTZqLVjqE1ZXRvOaUjGwPEzL5sLD-BW8qs",
     alt: "Women having bible study",
     icon: "👩",
-    action: "Learn more"
+    action: "Learn more",
+    link: "/ministry/womens"
   },
   // {
   //   id: 9,

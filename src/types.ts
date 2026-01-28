@@ -46,4 +46,23 @@ export interface Ministry {
   alt: string;
   icon: string;
   action: string;
+  link: string;
 }
+
+
+export interface SermonCategory {
+  id: string;
+  title: string;
+  series: string;
+  speaker: string;
+  date: string;
+  duration: string;
+  description: string;
+  imageUrl: string;
+  type: 'LATEST' | 'REGULAR' | 'SPECIAL' | 'VISION';
+  categoryColor?: string;
+}
+
+export type Speaker = 'Pastor John Doe' | 'Pastor Jane Smith' | 'Dr. Michael Brown' | 'All Speakers';
+export type Series = 'Walking in Faith' | 'The Book of Romans' | 'Special Event' | 'Vision Sunday' | 'All Series';
+

@@ -83,9 +83,11 @@ const MinistryCarousel: React.FC = () => {
                   <p className="text-[#617589] dark:text-slate-400 text-sm font-normal leading-normal line-clamp-3">
                     {ministry.description}
                   </p>
+                 <a href={ministry.link} className="mt-auto pt-2 text-primary text-sm font-bold leading-normal flex items-center gap-1 hover:gap-2 transition-all">
                   <button className="mt-auto pt-2 text-primary text-sm font-bold leading-normal flex items-center gap-1 hover:gap-2 transition-all">
                     Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </button>
+                  </a>
                 </div>
               </div>
             </div>

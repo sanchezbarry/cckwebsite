@@ -1,7 +1,7 @@
 import React from 'react';
 
-import  CellHero    from '@/components/CellHero';
-import VisionMission  from '@/components/VissionMission';
+import  AgapeHero    from '@/components/AgapeHero';
+import AgapeCarousel  from '@/components/AgapeCarousel';
 import { RecentMessages } from '@/components/RecentMessages';
 import { GetConnected } from '@/components/GetConnected';
 import { Events } from '@/components/Events';
@@ -16,8 +16,8 @@ export default function AboutUs() {
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <Navbar />
       <main className="grow flex flex-col items-center w-full">
-        <CellHero />
-        <CellGroups />
+        <AgapeHero />
+        <AgapeCarousel />
   
 
       </main>

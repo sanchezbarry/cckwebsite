@@ -7,7 +7,7 @@ const MINISTRIES: MinistryHome[] = [
     description: 'Connect with others and grow in your faith in a smaller setting.',
     icon: 'diversity_3',
     action: 'Find a Cell Group',
-    link: '#'
+    link: '/ministry/cellgroups'
   },
   {
     title: 'Missions & Outreach',

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export const Footer: React.FC = () => {
   return (
@@ -7,8 +8,11 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-primary text-3xl">church</span>
-              <h3 className="text-xl font-bold font-display tracking-tight">Grace Community</h3>
+                          <a href='/'>
+                          <Image  src="/transparentlogo.png" alt="Church Logo" width={32} height={32} />
+                          </a>
+              {/* <span className="material-symbols-outlined text-primary text-3xl">church</span> */}
+              <h3 className="text-xl font-bold font-display tracking-tight">Chapel of Christ the King</h3>
             </div>
             <div className="text-slate-400 text-sm leading-relaxed">
               <p>St Margaret’s School (Primary) School</p>

@@ -12,20 +12,20 @@ const NAV_ITEMS: NavItem[] = [
     href: '/ministry', 
     hasDropdown: true,
     dropdownItems: [
-      { label: 'Agape Children', href: '#' },
-      { label: 'Youth Ministry', href: '#' },
-      { label: 'Filipino Fellowship', href: '#' },
+      { label: 'Agape Children', href: '/ministry/agape' },
+      { label: 'Youth Ministry', href: '/ministry/youth' },
+      { label: 'Filipino Fellowship', href: '/ministry/filipino' },
       { label: 'Cell Groups', href: '/ministry/cellgroups' },
-      { label: 'Men\'s Ministry', href: '#' },
-      { label: 'Women\'s Ministry', href: '#' },
-      { label: 'Missions & Outreach', href: '#' },
-      { label: 'Music & Sound Ministry', href: '#' },
+      { label: 'Men\'s Ministry', href: '/ministry/men' },
+      { label: 'Women\'s Ministry', href: '/ministry/women' },
+      { label: 'Missions & Outreach', href: '/ministry/missions' },
+      { label: 'Music & Sound Ministry', href: '/ministry/music' },
     ]
   },
-  { label: 'Chaplaincy', href: '#', },
-  { label: 'Events', href: '#', },
-  { label: 'Contact', href: '#' },
-  { label: 'Member\' Page', href: '#' },
+  { label: 'Chaplaincy', href: '/chaplaincy', },
+  { label: 'Events', href: '/events', },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Member\' Page', href: '/member' },
 ];
 
 interface NavbarProps {}
