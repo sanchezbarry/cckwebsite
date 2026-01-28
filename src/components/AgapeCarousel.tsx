@@ -85,7 +85,7 @@ export default function AgapeCarousel() {
         <CarouselContent>
           {AGAPE_ITEMS.map((item) => (
             <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3 pl-4">
-              <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <Image
                   src={item.image}
                   alt={item.title}
