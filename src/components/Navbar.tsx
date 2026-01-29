@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '/about-us', },
-  { label: 'Sermons', href: '#', },
+  { label: 'Sermons', href: '/sermons', },
   { 
     label: 'Ministries', 
     href: '/ministry', 

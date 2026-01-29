@@ -17,6 +17,10 @@ export interface Sermon {
   speaker: string;
   imageUrl: string;
   category?: string;
+  date?: string;
+  duration?: string;
+  description?: string;
+  categoryColor?: string;
 }
 
 export interface Event {
@@ -61,6 +65,7 @@ export interface SermonCategory {
   imageUrl: string;
   type: 'LATEST' | 'REGULAR' | 'SPECIAL' | 'VISION';
   categoryColor?: string;
+  audioUrl?: string;
 }
 
 export type Speaker = 'Pastor John Doe' | 'Pastor Jane Smith' | 'Dr. Michael Brown' | 'All Speakers';

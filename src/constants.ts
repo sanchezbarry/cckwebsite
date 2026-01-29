@@ -1,4 +1,4 @@
-import { Ministry } from '@/types';
+import { Ministry, SermonCategory } from '@/types';
 
 export const MINISTRIES: Ministry[] = [
   {
@@ -118,3 +118,164 @@ export const MINISTRIES: Ministry[] = [
   //   action: "Learn more"
   // }
 ];
+
+export const FEATURED_SERMON: SermonCategory = {
+  id: '1',
+  title: 'The Community For You Or You For The Community',
+  series: 'Walking in Faith',
+  speaker: 'Revd Peter Chen',
+  date: 'September 7, 2025',
+  duration: '42:15',
+  description: 'In this powerful message, Revd Peter Chen explores what it truly means to be part of a faith community. Learn how being a member of the body of Christ involves both giving and receiving.',
+  imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=675&fit=crop',
+  type: 'LATEST',
+  categoryColor: 'text-blue-600'
+};
+
+export const SERMONS: SermonCategory[] = [
+  {
+    id: '1',
+    title: 'The Community For You Or You For The Community',
+    series: 'Walking in Faith',
+    speaker: 'Revd Peter Chen',
+    date: 'September 7, 2025',
+    duration: '42:15',
+    description: 'Exploring what it means to be part of a faith community and how to live out our calling together.',
+    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=675&fit=crop',
+    type: 'LATEST',
+    categoryColor: 'text-blue-600'
+  },
+  {
+    id: '2',
+    title: 'The Gospel For Generations Past, Present And Future',
+    series: 'Walking in Faith',
+    speaker: 'Pastor Yvonne Pan',
+    date: 'August 24, 2025',
+    duration: '38:42',
+    description: 'A timeless message about how the Gospel remains relevant across all generations and continues to transform lives.',
+    imageUrl: 'https://images.unsplash.com/photo-1525921429985-87cf8a9b3de7?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-green-600'
+  },
+  {
+    id: '3',
+    title: 'Locked In',
+    series: 'The Book of Romans',
+    speaker: 'Pastor Amos Chen',
+    date: 'August 17, 2025',
+    duration: '45:30',
+    description: 'Understanding how to stay focused on God\'s purpose and remain steadfast in our faith despite life\'s distractions.',
+    imageUrl: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-purple-600'
+  },
+  {
+    id: '4',
+    title: 'A Surprising Encounter With Jesus',
+    series: 'Special Event',
+    speaker: 'Revd Jeremy-Joe Tan',
+    date: 'August 10, 2025',
+    duration: '41:18',
+    description: 'Drawing from the account of Zacchaeus, discover how an unexpected encounter with Jesus can transform our entire perspective on life.',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=675&fit=crop',
+    type: 'SPECIAL',
+    categoryColor: 'text-red-600'
+  },
+  {
+    id: '5',
+    title: 'Faith in the Wilderness',
+    series: 'Walking in Faith',
+    speaker: 'Pastor John Doe',
+    date: 'August 3, 2025',
+    duration: '39:45',
+    description: 'When everything seems lost, how do we maintain faith? Explore biblical examples of trust in God during difficult seasons.',
+    imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f70674421?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-blue-600'
+  },
+  {
+    id: '6',
+    title: 'The Power of Prayer',
+    series: 'The Book of Romans',
+    speaker: 'Dr. Michael Brown',
+    date: 'July 27, 2025',
+    duration: '43:22',
+    description: 'Understanding the transformative power of prayer and how to develop a deeper prayer life with God.',
+    imageUrl: 'https://images.unsplash.com/photo-1506886613408-eca07ce68773?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-purple-600'
+  },
+  {
+    id: '7',
+    title: 'Vision Sunday 2025',
+    series: 'Vision Sunday',
+    speaker: 'Pastor Jane Smith',
+    date: 'July 20, 2025',
+    duration: '51:15',
+    description: 'Discover God\'s vision for our church and community as we look toward a new season of growth and impact.',
+    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=675&fit=crop',
+    type: 'VISION',
+    categoryColor: 'text-orange-600'
+  },
+  {
+    id: '8',
+    title: 'Loving Your Neighbor',
+    series: 'Walking in Faith',
+    speaker: 'Revd Bertram Cheong',
+    date: 'July 13, 2025',
+    duration: '37:50',
+    description: 'A practical exploration of the second greatest commandment and what it means to love others as ourselves.',
+    imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-blue-600'
+  },
+  {
+    id: '9',
+    title: 'Witnessing For Christ in Word and in Deed',
+    series: 'The Book of Romans',
+    speaker: 'Ven Wong Tak Meng',
+    date: 'May 11, 2025',
+    duration: '40:12',
+    description: 'Examining how our actions and words can work together to effectively communicate the Gospel to those around us.',
+    imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-purple-600'
+  },
+  {
+    id: '10',
+    title: 'Shoulder to Shoulder with Paul',
+    series: 'The Book of Romans',
+    speaker: 'Revd Bertram Cheong',
+    date: 'May 4, 2025',
+    duration: '44:33',
+    description: 'A deep dive into Paul\'s conversion and how his life exemplifies the transformative power of encountering Jesus.',
+    imageUrl: 'https://images.unsplash.com/photo-1506886613408-eca07ce68773?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-purple-600'
+  },
+  {
+    id: '11',
+    title: 'New Life, Anyone?',
+    series: 'Special Event',
+    speaker: 'Pastor John Doe',
+    date: 'April 20, 2025',
+    duration: '46:18',
+    description: 'An Easter message about the resurrection and the new life that comes through faith in Jesus Christ.',
+    imageUrl: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?w=1200&h=675&fit=crop',
+    type: 'SPECIAL',
+    categoryColor: 'text-red-600'
+  },
+  {
+    id: '12',
+    title: 'The Grace That Saves',
+    series: 'Walking in Faith',
+    speaker: 'Pastor Jane Smith',
+    date: 'April 13, 2025',
+    duration: '42:05',
+    description: 'Understanding God\'s grace and how it is the foundation of our salvation and daily walk with Him.',
+    imageUrl: 'https://images.unsplash.com/photo-1525921429985-87cf8a9b3de7?w=1200&h=675&fit=crop',
+    type: 'REGULAR',
+    categoryColor: 'text-blue-600'
+  },
+];
+
