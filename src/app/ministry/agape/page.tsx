@@ -2,13 +2,9 @@ import React from 'react';
 
 import  AgapeHero    from '@/components/AgapeHero';
 import AgapeCarousel  from '@/components/AgapeCarousel';
-import { RecentMessages } from '@/components/RecentMessages';
-import { GetConnected } from '@/components/GetConnected';
-import { Events } from '@/components/Events';
-import { VisitUs } from '@/components/VisitUs';
 import { Footer } from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import CellGroups from '@/components/CellGroups';
+import { AgapeInfo } from '@/components/AgapeInfo';
 
 
 export default function AboutUs() {
@@ -17,6 +13,7 @@ export default function AboutUs() {
       <Navbar />
       <main className="grow flex flex-col items-center w-full">
         <AgapeHero />
+        <AgapeInfo />
         <AgapeCarousel />
   
 
