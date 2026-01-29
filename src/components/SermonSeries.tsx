@@ -8,7 +8,7 @@ export const SermonSeries: React.FC = () => {
           <span className="text-primary font-bold font-display uppercase tracking-widest text-xs">Sunday Sermons</span>
           <h2 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold font-display mt-2">Latest Sermon</h2>
         </div>
-        <a href="#" className="text-slate-500 hover:text-primary font-semibold font-display flex items-center gap-1 transition-colors group">
+        <a href="/sermons" className="text-slate-500 hover:text-primary font-semibold font-display flex items-center gap-1 transition-colors group">
           View All <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </a>
       </div>

@@ -23,7 +23,6 @@ export const InstagramFeed: React.FC = () => {
       {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto md:h-70"> */}
          <div>
         
-<iframe src="https://widgets.sociablekit.com/instagram-feed/iframe/25647260"  width="100%" height="200%"></iframe>
         {/* {IMAGES.map((src, index) => (
           <div key={index} className="relative group aspect-square md:aspect-auto overflow-hidden bg-slate-100 dark:bg-slate-800 cursor-pointer">
             <div 

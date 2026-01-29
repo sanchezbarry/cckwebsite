@@ -9,7 +9,7 @@ const AboutHero: React.FC = () => {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-[20s] hover:scale-105"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRjleZUxkk14fuGU73oRUyjvRkLVO-JzDQCH5NaOT7OYQtYZ77MDiITncF5K5I65MTopwRsypEoaHsvsluqSJNPDgyTp-OK0nW1ltrNc4HlEkMPempxTjoDUC0Io1EmDyLGfkAWJ0DItdfoWta4PPzbpg2PGqMu8YifphpKYXqWEGAsS7V7ADgZWcHE_V38ExCgOuECigVTx0eyV8XSzUY-oI82zMa1Us2yU4SPMn5hi_YpaTre6UKU0Ojc_sDVgkmAYK2F4hSSFPB')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url('/about.png')`
         }}
       />
       
@@ -21,11 +21,11 @@ const AboutHero: React.FC = () => {
         <p className="text-white/90 text-lg md:text-xl font-medium max-w-lg mx-auto drop-shadow-sm mt-4">
           A community dedicated to faith, hope, and love. Join us as we journey together.
         </p>
-        <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+        {/* <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
           <button className="h-12 px-6 bg-primary hover:bg-blue-600 text-white text-base font-bold rounded-lg transition-all hover:scale-105 shadow-md">
             Watch Welcome Video
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

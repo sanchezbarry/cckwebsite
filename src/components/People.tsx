@@ -15,7 +15,7 @@ const leaders = [
   },
   {
     name: "Brenda",
-    role: "Administrative Executiv",
+    role: "Administrative Executive",
     description: "Ever ready to ensure all is running well at CCK. Our administrator will be glad to hear from you and assist in any way possible.",
     image: "/web3.jpg"
   },
@@ -35,7 +35,7 @@ const leaders = [
     name: "Yvonne Pan",
     role: "Children’s Ministry Worker",
     description: "Walks with every child to develop a heart that loves God. Inculcate godly values to the next generation, inspiring and encouraging them to keep their relationship with God strong and vibrant!",
-    image: "/web4.jpg"
+    image: "/web6.jpg"
   },
 ];
 
@@ -50,7 +50,7 @@ const People: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {leaders.map((leader, index) => (
           <div key={index} className="group flex flex-col gap-3">
-            <div className="aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">
+            <div className="aspect-3/4 w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-sm">
               <div 
                 className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: `url('${leader.image}')` }}
