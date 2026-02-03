@@ -39,7 +39,7 @@ export function LoginForm({
       })
 
       if (!response.ok) {
-        setError("Invalid username or password")
+        setError("Invalid password")
         return
       }
 
