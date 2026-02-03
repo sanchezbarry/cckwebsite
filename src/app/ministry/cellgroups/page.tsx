@@ -15,7 +15,7 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <Navbar />
-      <main className="grow flex flex-col items-center w-full">
+      <main className="grow flex-col items-center w-full">
         <CellHero />
         <CellGroups />
   

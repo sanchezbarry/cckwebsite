@@ -30,13 +30,13 @@ export const Hero: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-          <button className="group flex items-center justify-center gap-2 h-14 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold font-display rounded-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+          <button className="pointer group flex items-center justify-center gap-2 h-14 px-8 bg-primary hover:bg-blue-600 text-white text-base font-bold font-display rounded-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
             <span>New Here? Start Here</span>
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </button>
           
-          <button className="group flex items-center justify-center gap-2 h-14 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-base font-bold font-display rounded-lg transition-all hover:-translate-y-1">
-            <span>Listen Online</span>
+          <button className="pointer group flex items-center justify-center gap-2 h-14 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white text-base font-bold font-display rounded-lg transition-all hover:-translate-y-1">
+            <a href="/sermons">Listen Online</a>
             <span className="material-symbols-outlined text-xl group-hover:scale-110 transition-transform">play_circle</span>
           </button>
         </div>

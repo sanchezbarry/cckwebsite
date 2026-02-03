@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const YouthHero: React.FC = () => {
+const MenHero: React.FC = () => {
   return (
     <section className="relative w-full min-h-120 flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -31,4 +31,4 @@ const YouthHero: React.FC = () => {
   );
 };
 
-export default YouthHero;
+export default MenHero;
