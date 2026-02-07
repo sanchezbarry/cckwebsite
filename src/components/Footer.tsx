@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               <p>St Margaret’s School (Primary) School</p>
               <p>136 Sophia Rd, Singapore 228197</p>
               {/* <p className="mt-4 text-white font-medium">(555) 123-4567</p> */}
-              <p className="text-primary hover:text-white transition-colors cursor-pointer">hello@gracecommunity.com</p>
+              {/* <p className="text-primary hover:text-white transition-colors cursor-pointer">hello@gracecommunity.com</p> */}
             </div>
             <div className="flex gap-4 mt-2">
               <a href="https://www.instagram.com/sg.cck/" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all">
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-lg font-bold font-display mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-1 after:bg-primary after:rounded-full">Weekly Updates</h4>
             <p className="text-slate-400 text-sm mb-6 leading-relaxed">Subscribe to our newsletter to stay informed about events and news.</p>
             <form className="flex flex-col gap-3">
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
                 Subscribe
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">

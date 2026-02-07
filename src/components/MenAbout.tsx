@@ -7,29 +7,20 @@ const MenAbout: React.FC = () => {
         <Card>
             <CardContent>
         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight pt-6">
-      BEING MOULDED & NURTURED TOGETHER
+      Iron Sharpens Iron
 
     </h4>
-    <p className="leading-7 [&:not(:first-child)]:mt-6">
-      In the youth ministry of Chapel of Christ the King, we have fellowship and meet regularly to bond and grow in Christ.
-
-We are challenged to live out our Christian values of Faith, Hope and Love in our lives.
+    <p className="leading-7 not-first:mt-6">
+      CCK's Men's Ministry are for men of all ages. We aim to navigate through life together, where 'no man is an island'. Through fellowship time over 'makan', sports and many other events, relationship and bonds are built-up.
     </p>
 
-    <div className="text-lg font-semibold mt-6">Our Mission</div>
+ 
 
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
-:: Love God with all our heart, soul, mind and strength (Deut 6:5)
+        <p className="leading-7 not-first:mt-6">
+Our Men's Ministry is also about challenging one another to live out in obedience all that Christ has commanded. We believe that 'iron will sharpen iron' and each one is called to make disciples.
     </p>
 
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
-:: Love the body of Christ through fellowship, discipleship and service (1 Cor 12:27; Eph 1-13; Gal 5:13)
 
-    </p>
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
-:: Love others by sharing the gospel and our lives (Matt 5:14-16; 29:18-20)
-
-    </p>
     </CardContent>
 </Card>
     </div>
