@@ -4,7 +4,7 @@ import Image from 'next/image';
 export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-[#101922] text-white pt-24 pb-12">
-      <div className="max-w-[1200px] mx-auto px-4">
+      <div className="max-w-300 mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
@@ -71,8 +71,8 @@ export const Footer: React.FC = () => {
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-xs font-medium">© 2026 Chapel of Christ the King. All rights reserved.</p>
           <div className="flex gap-8 text-slate-500 text-xs font-medium">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/datadelete" className="hover:text-white transition-colors">Data</a>
           </div>
         </div>
       </div>
