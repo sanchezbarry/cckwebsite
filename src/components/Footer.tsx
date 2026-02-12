@@ -33,22 +33,22 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold font-display mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-1 after:bg-primary after:rounded-full">Quick Links</h4>
             <ul className="flex flex-col gap-4 text-slate-400 text-sm font-medium">
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">About Us</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Sermons</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Member's Page</a></li>
+              <li><a href="/about-us" className="hover:text-primary hover:translate-x-1 transition-all inline-block">About Us</a></li>
+              <li><a href="/sermons" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Sermons</a></li>
+              <li><a href="/member" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Member's Page</a></li>
               <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Chaplaincy</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Events</a></li>
+              <li><a href="/events" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Events</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-bold font-display mb-8 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-1 after:bg-primary after:rounded-full">Ministries</h4>
             <ul className="flex flex-col gap-4 text-slate-400 text-sm font-medium">
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Cell Groups</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Music & Sound</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Missons & Outreach</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Youth Fellowship</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Agape Children</a></li>
+              <li><a href="/ministry/cellgroups" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Cell Groups</a></li>
+              <li><a href="/ministry/music" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Music & Sound</a></li>
+              <li><a href="/ministry/missions" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Missons & Outreach</a></li>
+              <li><a href="/ministry/youth" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Youth Fellowship</a></li>
+              <li><a href="/ministry/agape" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Agape Children</a></li>
             </ul>
           </div>
 
