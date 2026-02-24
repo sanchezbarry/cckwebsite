@@ -28,23 +28,21 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Member\' Page', href: '/member' },
 ];
 
-interface NavbarProps {}
-interface NavbarState {
-  isScrolled: boolean;
-  isMobileMenuOpen: boolean;
+interface NavbarProps {
+  alwaysShowBackground?: boolean;
 }
 
-export default function Navbar(){
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+export default function Navbar({ alwaysShowBackground = false }: NavbarProps){
+  const [isScrolled, setIsScrolled] = useState<boolean>(alwaysShowBackground);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   useEffect((): (() => void) => {
     const handleScroll = (): void => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(alwaysShowBackground || window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [alwaysShowBackground]);
 
   return (
     <nav 

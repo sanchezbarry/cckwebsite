@@ -279,3 +279,81 @@ export const SERMONS: SermonCategory[] = [
   },
 ];
 
+
+
+import { Calendar, MapPin, Clock, Users, Video, Heart, Sparkles, ChevronLeft, ChevronRight, Search, List, CalendarDays, Mail } from 'lucide-react';
+
+export interface Event {
+  id: string;
+  title: string;
+  description: string;
+  date: Date;
+  time: string;
+  location: string;
+  category: 'Sunday Service' | 'Youth' | 'Community' | 'Online' | 'Other';
+  image?: string;
+  isFeatured?: boolean;
+}
+
+export const MOCK_EVENTS: Event[] = [
+  {
+    id: '1',
+    title: 'Easter Sunday Service',
+    description: 'Join us as we celebrate the resurrection with special music and a message of hope.',
+    date: new Date(2026, 3, 9), // April 9
+    time: '9:00 AM & 11:00 AM',
+    location: 'Main Sanctuary',
+    category: 'Sunday Service',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBY3PzLp1ie32qURStpixkz5AmDUJO2p2wtrNomz_ow8s7beTkIjceSiPaer7O-cVsV3poPywExrCjTpbMqdVJ5orotyWwgEf32XNCLJaZoWd1UMo_CEzulxfGjWV3W_K43j1nANN4ED3bUJOE2F6Tf8pI9lG1z6Uq1ErfF3knCnvYsIyWw3Dc2n4aMWTU_K3Sl5Npea4x1eOTe3hDqpeS-kc7ZFHJMROHnbfP9QH67nh9cl6AqJ4mZXsQR7cfuqeazD4teAk0qniRO',
+    isFeatured: true,
+  },
+  {
+    id: '2',
+    title: 'Annual Youth Retreat',
+    description: 'A weekend getaway for students to connect, have fun, and grow in their faith.',
+    date: new Date(2026, 5, 15), // June 15
+    time: 'Fri 5:00 PM - Sun 12:00 PM',
+    location: 'Camp Pines',
+    category: 'Youth',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGT1oCc6HhWIetLedvroz9ooByBiLEpFi9GoTq4-mIdi4GwwDdCbw5Q26lYB163e_WfOBxHbNMLWWS_XqFwv_VrWQXW5t3f7O2Ho9PrFcFbxkYtI22r16RqPg4QOEO5yJStlI7Q2zWc2FB3MG23NaZsgb-LvgnxjDpl3Sky1L3fmki1RXKcXWUk21sLyh7YZpn-3XeQezeB1hvfj97zkwdW7iO7eeTi2TFVFMRIfq1dkhx-jLhBvX_NFU3ZAUnW9fQNjJrr5ff9NXK',
+    isFeatured: true,
+  },
+  {
+    id: '3',
+    title: 'Community Outreach',
+    description: 'Serve our city by helping distribute food and supplies to families in need.',
+    date: new Date(2026, 4, 20), // May 20
+    time: 'Sat 9:00 AM',
+    location: 'Community Center',
+    category: 'Community',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBqOybyWJEZqwMQFUJU_ErutmmI-wE0MyRbPx85bldNIydvhSu7cyEhxhF6rH_aKum_D0Z3H_mZOBv5mGsfxtIf6Mjpu6cANd8nRA6-XPr9u7DXD1CqTPtq13KdKQINlxcX83v9pde_NH60L7mU0EA_KNDoQKpC4T_rCp55rzZLtMKfSln12G-6UHeQbqh-N62VPfktyFDekup2Y8JRzPeU1dOI_b4DumNEb4c7LOQeV9fYoEUV-XeIF72OSseUeUlrfku7lNGxk8Ki',
+    isFeatured: true,
+  },
+  {
+    id: '4',
+    title: 'Midweek Bible Study',
+    description: 'Deep dive into the Book of Romans.',
+    date: new Date(2026, 1, 25), // Feb 25
+    time: '7:00 PM',
+    location: 'Room 302',
+    category: 'Community',
+  },
+  {
+    id: '5',
+    title: 'Worship Night',
+    description: 'An evening of extended praise and worship.',
+    date: new Date(2026, 1, 28), // Feb 28
+    time: '8:00 PM',
+    location: 'Main Hall',
+    category: 'Sunday Service',
+  },
+  {
+    id: '6',
+    title: 'Youth Group Hangout',
+    description: 'Games, pizza, and fellowship for high schoolers.',
+    date: new Date(2026, 1, 27), // Feb 27
+    time: '6:30 PM',
+    location: 'Youth Lounge',
+    category: 'Youth',
+  },
+];

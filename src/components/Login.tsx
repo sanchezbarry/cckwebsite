@@ -13,16 +13,38 @@ import {
 import { Input } from "@/components/ui/input"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card"
 import { useState } from "react"
-
+import { createClient } from "@supabase/supabase-js"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
 
+  const [userType, setUserType] = useState<"member" | "admin">("member")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Initialize Supabase client
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
+  )
+
+  // User credentials by type
+  const userCredentials = {
+    member: { email: "cck.socials@gmail.com", label: "Member" },
+    admin: { email: "admin@cck.org.sg", label: "Admin" },
+  }
+
+  const currentUser = userCredentials[userType]
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -30,23 +52,20 @@ export function LoginForm({
     setLoading(true)
 
     try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({  password }),
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
+        email: currentUser.email,
+        password,
       })
 
-      if (!response.ok) {
+      if (signInError) {
         setError("Invalid password")
+        console.error("Login error:", signInError)
         return
       }
 
-      const data = await response.json()
-      if (data.success) {
+      if (data?.session) {
         setPassword("")
-        // Redirect or show success - adjust as needed
+        // Redirect to members page
         window.location.href = "/members"
       }
     } catch (err) {
@@ -68,17 +87,18 @@ export function LoginForm({
                   Login to Member's Page
                 </p>
               </div>
-              {/* <Field>
-                <FieldLabel htmlFor="username">Username</FieldLabel>
-                <Input
-                  id="username"
-                  type="text"
-                  placeholder="Enter your username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-              </Field> */}
+              <Field>
+                <FieldLabel htmlFor="userType">User Type</FieldLabel>
+                <Select value={userType} onValueChange={(value) => setUserType(value as "member" | "admin")}>
+                  <SelectTrigger id="userType">
+                    <SelectValue placeholder="Select user type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="member">Member</SelectItem>
+                    <SelectItem value="admin">Admin</SelectItem>
+                  </SelectContent>
+                </Select>
+              </Field>
               <Field>
                 <div className="flex justify-between items-center">
                   <FieldLabel htmlFor="password">Password</FieldLabel>

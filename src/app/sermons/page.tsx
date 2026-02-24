@@ -27,8 +27,8 @@ export default function AboutUs() {
 
   return (
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
-      <Navbar />
-      <main className="grow flex flex-col items-center w-full">
+      <Navbar alwaysShowBackground />
+      <main className="pt-12 grow flex flex-col items-center w-full">
         <SermonHero />
         {/* <FilterToolbar search={search} setSearch={setSearch} selectedSeries={selectedSeries} setSelectedSeries={setSelectedSeries} selectedSpeaker={selectedSpeaker} setSelectedSpeaker={setSelectedSpeaker} /> */}
         <SermonLibrary />
