@@ -27,7 +27,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
 
-  const [userType, setUserType] = useState<"member" | "admin">("member")
+  const [userType, setUserType] = useState<"member" | "admin" | "coffeecart">("member")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -42,6 +42,7 @@ export function LoginForm({
   const userCredentials = {
     member: { email: "cck.socials@gmail.com", label: "Member" },
     admin: { email: "admin@cck.org.sg", label: "Admin" },
+    coffeecart: { email: "sanchezbarry@gmail.com", label: "Coffee Cart" },
   }
 
   const currentUser = userCredentials[userType]
@@ -65,8 +66,9 @@ export function LoginForm({
 
       if (data?.session) {
         setPassword("")
-        // Redirect to members page
-        window.location.href = "/members"
+        // Redirect based on user type
+        const redirectPath = userType === "coffeecart" ? "/coffee-cart" : "/members"
+        window.location.href = redirectPath
       }
     } catch (err) {
       setError("An error occurred. Please try again.")
@@ -89,13 +91,14 @@ export function LoginForm({
               </div>
               <Field>
                 <FieldLabel htmlFor="userType">User Type</FieldLabel>
-                <Select value={userType} onValueChange={(value) => setUserType(value as "member" | "admin")}>
+                <Select value={userType} onValueChange={(value) => setUserType(value as "member" | "admin" | "coffeecart")}>
                   <SelectTrigger id="userType">
                     <SelectValue placeholder="Select user type" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="member">Member</SelectItem>
                     <SelectItem value="admin">Admin</SelectItem>
+                    <SelectItem value="coffeecart">Coffee Cart</SelectItem>
                   </SelectContent>
                 </Select>
               </Field>
