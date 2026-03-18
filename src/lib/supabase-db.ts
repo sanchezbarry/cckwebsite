@@ -15,6 +15,7 @@ export interface CoffeeOrder {
   hotWhite: number
   espresso: number
   totalShift?: number
+  totalTips?: number | null
   created_at?: string
   updated_at?: string
 }
@@ -53,6 +54,7 @@ export async function getCoffeeOrders(
       hotWhite: data.hot_white || 0,
       espresso: data.espresso || 0,
       totalShift: data.total_shift || 0,
+      totalTips: data.total_tips || null,
       created_at: data.created_at,
       updated_at: data.updated_at,
     }
@@ -80,6 +82,7 @@ export async function saveCoffeeOrders(orders: CoffeeOrder): Promise<boolean> {
         hot_white: orders.hotWhite,
         espresso: orders.espresso,
         total_shift: totalShift,
+        total_tips: orders.totalTips || null,
         updated_at: new Date().toISOString(),
       },
       {
@@ -126,6 +129,7 @@ export async function getDailyOrders(
       hotWhite: row.hot_white || 0,
       espresso: row.espresso || 0,
       totalShift: row.total_shift || 0,
+      totalTips: row.total_tips || null,
       created_at: row.created_at,
       updated_at: row.updated_at,
     })

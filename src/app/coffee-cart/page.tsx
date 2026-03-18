@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { createClient } from "@supabase/supabase-js"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -37,13 +38,47 @@ const defaultShiftData: ShiftData = {
 }
 
 export default function CoffeeCartPage() {
+  // Authentication state
+  const [authenticated, setAuthenticated] = useState(false)
+  const [authLoading, setAuthLoading] = useState(true)
+
+  // Order data state
   const [shiftData, setShiftData] = useState<ShiftData>(defaultShiftData)
   const [currentShift, setCurrentShift] = useState<"am" | "pm">("am")
   const [selectedDate] = useState(getToday())
   const [phoneNumber, setPhoneNumber] = useState("")
+  const [totalTips, setTotalTips] = useState("")
   const [mounted, setMounted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState<{ type: "success" | "error"; text: string } | null>(null)
+
+  // Initialize Supabase client
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
+  )
+
+  // Check authentication on mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const { data: { session } } = await supabase.auth.getSession()
+
+        if (session && session.user.email === "sanchezbarry@gmail.com") {
+          setAuthenticated(true)
+        } else {
+          window.location.href = "/member"
+        }
+      } catch (error) {
+        console.error("Auth check error:", error)
+        window.location.href = "/member"
+      } finally {
+        setAuthLoading(false)
+      }
+    }
+
+    checkAuth()
+  }, [])
 
   // Format date as YYYY-MM-DD
   function getToday(): string {
@@ -96,6 +131,13 @@ export default function CoffeeCartPage() {
     const localStorageKey = `coffee-cart-${selectedDate}`
     localStorage.setItem(localStorageKey, JSON.stringify(shiftData))
   }, [shiftData, selectedDate, mounted])
+
+  // Clear tips when switching to AM shift
+  useEffect(() => {
+    if (currentShift === "am") {
+      setTotalTips("")
+    }
+  }, [currentShift])
 
   const handleAddOrder = (coffeeType: keyof OrderCounts) => {
     setShiftData((prev) => ({
@@ -156,6 +198,7 @@ export default function CoffeeCartPage() {
         icedWhite: orders.icedWhite,
         hotWhite: orders.hotWhite,
         espresso: orders.espresso,
+        totalTips: shiftToSubmit === "pm" && totalTips ? parseFloat(totalTips) : null,
       })
 
       let message: string
@@ -165,8 +208,9 @@ export default function CoffeeCartPage() {
         const amData = await getCoffeeOrders(selectedDate, "am")
         const amTotal = amData ? (amData.icedBlack + amData.hotBlack + amData.icedWhite + amData.hotWhite + amData.espresso) : 0
         const overallTotal = amTotal + totalCups
+        const tipsAmount = totalTips ? parseFloat(totalTips) : 0
 
-        message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n📅 Complete Daily Summary:\n\n🌅 AM Shift:\nIced Black: ${amData?.icedBlack || 0}\nHot Black: ${amData?.hotBlack || 0}\nIced White: ${amData?.icedWhite || 0}\nHot White: ${amData?.hotWhite || 0}\nEspresso: ${amData?.espresso || 0}\nAM Total: ${amTotal} cups\n\n🌆 PM Shift:\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\nPM Total: ${totalCups} cups\n\n📊 Daily Total: ${overallTotal} cups`
+        message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n📅 Complete Daily Summary:\n\n🌅 AM Shift:\nIced Black: ${amData?.icedBlack || 0}\nHot Black: ${amData?.hotBlack || 0}\nIced White: ${amData?.icedWhite || 0}\nHot White: ${amData?.hotWhite || 0}\nEspresso: ${amData?.espresso || 0}\nAM Total: ${amTotal} cups\n\n🌆 PM Shift:\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\nPM Total: ${totalCups} cups\n\n💵 Tips Collected (PM): $${tipsAmount.toFixed(2)}\n\n📊 Daily Total: ${overallTotal} cups`
       } else {
         // For AM shift, just show current shift data
         message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n${shiftToSubmit.toUpperCase()} Shift:\n\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\n\nTotal: ${totalCups} cups`
@@ -209,12 +253,26 @@ export default function CoffeeCartPage() {
     { id: "espresso", label: "Espresso" },
   ]
 
+  // Show loading while checking authentication
+  if (authLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-slate-600 dark:text-slate-400">Loading...</div>
+      </div>
+    )
+  }
+
+  // Show loading while mounting page data
   if (!mounted) {
     return (
       <div className="flex items-center justify-center h-screen">
         <div className="text-slate-600 dark:text-slate-400">Loading...</div>
       </div>
     )
+  }
+
+  if (!authenticated) {
+    return null
   }
 
   return (
@@ -262,6 +320,33 @@ export default function CoffeeCartPage() {
             </div>
           </div>
         </div>
+
+        {/* PM Shift Tips Input */}
+        {currentShift === "pm" && (
+          <div className="mb-6">
+            <Label htmlFor="tips" className="block text-sm font-semibold text-slate-900 dark:text-white mb-3">
+              Total Tips
+            </Label>
+            <div className="flex items-center">
+              <span className="text-md font-semibold text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-l-lg border border-r-0 border-slate-300 dark:border-slate-700">
+                $
+              </span>
+              <Input
+                id="tips"
+                type="number"
+                placeholder="0.00"
+                value={totalTips}
+                onChange={(e) => setTotalTips(e.target.value)}
+                step="0.01"
+                min="0"
+                className="rounded-l-none border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white dark:bg-slate-800"
+              />
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+              Amount collected in tips for PM shift
+            </p>
+          </div>
+        )}
         {submitMessage && (
           <div
             className={`mb-6 p-3 rounded-lg text-sm font-medium ${
@@ -370,7 +455,7 @@ export default function CoffeeCartPage() {
         </div>
 
         {/* Daily Total Section */}
-        <Card className="border-slate-200 dark:border-slate-800 bg-slate-900 dark:bg-slate-800 text-white mt-6">
+        <Card className="border-slate-200 dark:border-slate-800 bg-slate-900 dark:bg-slate-800 text-white mt-6 pt-4">
           <CardHeader className="pb-3">
             <CardTitle className="text-white">Daily Total</CardTitle>
             <CardDescription className="text-slate-400">
@@ -405,7 +490,7 @@ export default function CoffeeCartPage() {
         </Card>
 
         {/* Detailed Breakdown Table */}
-        <Card className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 mt-6">
+        <Card className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 mt-6 pt-4">
           <CardHeader className="pb-3">
             <CardTitle className="text-slate-900 dark:text-white">Detailed Breakdown</CardTitle>
           </CardHeader>
