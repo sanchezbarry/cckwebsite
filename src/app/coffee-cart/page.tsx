@@ -145,7 +145,7 @@ export default function CoffeeCartPage() {
     try {
       const shiftToSubmit = currentShift
       const orders = shiftData[shiftToSubmit]
-      const totalCups = Object.values(orders).reduce((a, b) => a + b, 0)
+      const totalCups = orders.icedBlack + orders.hotBlack + orders.icedWhite + orders.hotWhite + orders.espresso
 
       // Save to database
       await saveCoffeeOrders({
@@ -158,8 +158,19 @@ export default function CoffeeCartPage() {
         espresso: orders.espresso,
       })
 
-      // Build WhatsApp message
-      const message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n${shiftToSubmit.toUpperCase()} Shift:\n\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\n\nTotal: ${totalCups} cups`
+      let message: string
+
+      if (shiftToSubmit === "pm") {
+        // For PM shift, fetch AM shift data and include both in message
+        const amData = await getCoffeeOrders(selectedDate, "am")
+        const amTotal = amData ? (amData.icedBlack + amData.hotBlack + amData.icedWhite + amData.hotWhite + amData.espresso) : 0
+        const overallTotal = amTotal + totalCups
+
+        message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n📅 Complete Daily Summary:\n\n🌅 AM Shift:\nIced Black: ${amData?.icedBlack || 0}\nHot Black: ${amData?.hotBlack || 0}\nIced White: ${amData?.icedWhite || 0}\nHot White: ${amData?.hotWhite || 0}\nEspresso: ${amData?.espresso || 0}\nAM Total: ${amTotal} cups\n\n🌆 PM Shift:\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\nPM Total: ${totalCups} cups\n\n📊 Daily Total: ${overallTotal} cups`
+      } else {
+        // For AM shift, just show current shift data
+        message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n${shiftToSubmit.toUpperCase()} Shift:\n\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\n\nTotal: ${totalCups} cups`
+      }
 
       // Open WhatsApp with message (prepend 65 to phone number)
       const fullPhoneNumber = `65${phoneNumber}`
@@ -169,7 +180,7 @@ export default function CoffeeCartPage() {
 
       setSubmitMessage({
         type: "success",
-        text: `${shiftToSubmit.toUpperCase()} shift submitted! Total: ${totalCups} cups. Opening WhatsApp...`,
+        text: `${shiftToSubmit.toUpperCase()} shift submitted! Opening WhatsApp...`,
       })
 
       // Clear message after 3 seconds
@@ -185,10 +196,10 @@ export default function CoffeeCartPage() {
   }
 
   const currentOrders = shiftData[currentShift]
-  const totalCurrentShift = Object.values(currentOrders).reduce((a, b) => a + b, 0)
-  const totalDay =
-    Object.values(shiftData.am).reduce((a, b) => a + b, 0) +
-    Object.values(shiftData.pm).reduce((a, b) => a + b, 0)
+  const totalCurrentShift = currentOrders.icedBlack + currentOrders.hotBlack + currentOrders.icedWhite + currentOrders.hotWhite + currentOrders.espresso
+  const amTotal = shiftData.am.icedBlack + shiftData.am.hotBlack + shiftData.am.icedWhite + shiftData.am.hotWhite + shiftData.am.espresso
+  const pmTotal = shiftData.pm.icedBlack + shiftData.pm.hotBlack + shiftData.pm.icedWhite + shiftData.pm.hotWhite + shiftData.pm.espresso
+  const totalDay = amTotal + pmTotal
 
   const coffeeOptions = [
     { id: "icedBlack", label: "Iced Black" },
@@ -376,13 +387,13 @@ export default function CoffeeCartPage() {
               <div>
                 <p className="text-sm text-slate-400 font-semibold mb-2">AM Shift</p>
                 <p className="text-4xl font-bold text-white">
-                  {Object.values(shiftData.am).reduce((a, b) => a + b, 0)}
+                  {amTotal}
                 </p>
               </div>
               <div className="border-l border-r border-slate-700 px-8">
                 <p className="text-sm text-slate-400 font-semibold mb-2">PM Shift</p>
                 <p className="text-4xl font-bold text-white">
-                  {Object.values(shiftData.pm).reduce((a, b) => a + b, 0)}
+                  {pmTotal}
                 </p>
               </div>
               <div className="text-right">
@@ -443,10 +454,10 @@ export default function CoffeeCartPage() {
                   <tr className="border-t-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
                     <td className="py-3 px-4 font-bold text-slate-900 dark:text-white">TOTAL</td>
                     <td className="text-center py-3 px-4 font-bold text-slate-900 dark:text-white">
-                      {Object.values(shiftData.am).reduce((a, b) => a + b, 0)}
+                      {amTotal}
                     </td>
                     <td className="text-center py-3 px-4 font-bold text-slate-900 dark:text-white">
-                      {Object.values(shiftData.pm).reduce((a, b) => a + b, 0)}
+                      {pmTotal}
                     </td>
                     <td className="text-center py-3 px-4 font-bold text-primary">{totalDay}</td>
                   </tr>
