@@ -65,8 +65,22 @@ export default function CoffeeCartPage() {
         // Fetch from DB if no local cache
         const { am, pm } = await getDailyOrders(selectedDate)
         const newData: ShiftData = {
-          am: am ? { ...am } : defaultOrderCounts,
-          pm: pm ? { ...pm } : defaultOrderCounts,
+          am: am ? {
+            icedBlack: am.icedBlack,
+            hotBlack: am.hotBlack,
+            icedWhite: am.icedWhite,
+            hotWhite: am.hotWhite,
+            espresso: am.espresso,
+            id: am.id,
+          } : defaultOrderCounts,
+          pm: pm ? {
+            icedBlack: pm.icedBlack,
+            hotBlack: pm.hotBlack,
+            icedWhite: pm.icedWhite,
+            hotWhite: pm.hotWhite,
+            espresso: pm.espresso,
+            id: pm.id,
+          } : defaultOrderCounts,
         }
         setShiftData(newData)
       }
@@ -259,92 +273,90 @@ export default function CoffeeCartPage() {
               PM Shift
             </TabsTrigger>
           </TabsList>
-
-          {["am", "pm"].map((shift) => (
-            <TabsContent key={shift} value={shift} className="space-y-4">
-              {/* Coffee Options Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-                {coffeeOptions.map((coffee) => (
-                  <div
-                    key={coffee.id}
-                    className="flex flex-col p-4 border border-slate-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
-                  >
-                    <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
-                      {coffee.label}
-                    </h3>
-                    <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                      {currentOrders[coffee.id as keyof OrderCounts]}
-                    </div>
-                    <div className="flex gap-2 mt-auto">
-                      <Button
-                        onClick={() => handleRemoveOrder(coffee.id as keyof OrderCounts)}
-                        variant="outline"
-                        className="flex-1 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
-                      >
-                        −
-                      </Button>
-                      <Button
-                        onClick={() => handleAddOrder(coffee.id as keyof OrderCounts)}
-                        className="flex-1 bg-primary text-white hover:bg-primary/90 dark:hover:bg-primary/80"
-                      >
-                        +
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Shift Summary Card */}
-              <Card className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-slate-900 dark:text-white">
-                    {shift.toUpperCase()} Shift Summary
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                    {coffeeOptions.map((coffee) => (
-                      <div
-                        key={coffee.id}
-                        className="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-center"
-                      >
-                        <p className="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-2 uppercase tracking-wider">
-                          {coffee.label}
-                        </p>
-                        <p className="text-2xl font-bold text-slate-900 dark:text-white">
-                          {currentOrders[coffee.id as keyof OrderCounts]}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                  <Separator className="bg-slate-200 dark:bg-slate-800" />
-                  <div className="flex justify-between items-center">
-                    <span className="font-semibold text-slate-900 dark:text-white">
-                      {shift.toUpperCase()} Total Cups
-                    </span>
-                    <span className="text-3xl font-bold text-primary">{totalCurrentShift}</span>
-                  </div>
-                  <div className="flex gap-3">
-                    <Button
-                      onClick={handleReset}
-                      variant="outline"
-                      className="flex-1 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
-                    >
-                      Reset Shift
-                    </Button>
-                    <Button
-                      onClick={handleSubmitShift}
-                      disabled={submitting}
-                      className="flex-1 bg-primary text-white hover:bg-primary/90 dark:hover:bg-primary/80"
-                    >
-                      {submitting ? "Submitting..." : "Submit Shift Total"}
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          ))}
         </Tabs>
+
+        {/* Coffee Options Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-4">
+          {coffeeOptions.map((coffee) => (
+            <div
+              key={coffee.id}
+              className="flex flex-col p-4 border border-slate-200 dark:border-slate-800 rounded-lg bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
+            >
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                {coffee.label}
+              </h3>
+              <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                {currentOrders[coffee.id as keyof OrderCounts]}
+              </div>
+              <div className="flex gap-2 mt-auto">
+                <Button
+                  onClick={() => handleRemoveOrder(coffee.id as keyof OrderCounts)}
+                  variant="outline"
+                  className="flex-1 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+                >
+                  −
+                </Button>
+                <Button
+                  onClick={() => handleAddOrder(coffee.id as keyof OrderCounts)}
+                  className="flex-1 bg-primary text-white hover:bg-primary/90 dark:hover:bg-primary/80"
+                >
+                  +
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Shift Summary Card */}
+        <Card className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 mt-4">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-slate-900 dark:text-white">
+              {currentShift.toUpperCase()} Shift Summary
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+              {coffeeOptions.map((coffee) => (
+                <div
+                  key={coffee.id}
+                  className="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 text-center"
+                >
+                  <p className="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-2 uppercase tracking-wider">
+                    {coffee.label}
+                  </p>
+                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                    {currentOrders[coffee.id as keyof OrderCounts]}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <Separator className="bg-slate-200 dark:bg-slate-800" />
+            <div className="flex justify-between items-center">
+              <span className="font-semibold text-slate-900 dark:text-white">
+                {currentShift.toUpperCase()} Total Cups
+              </span>
+              <span className="text-3xl font-bold text-primary">{totalCurrentShift}</span>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Action Buttons */}
+        <div className="flex gap-3 mt-6">
+          <Button
+            onClick={handleReset}
+            variant="outline"
+            className="flex-1 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Reset Shift
+          </Button>
+          <Button
+            onClick={handleSubmitShift}
+            disabled={submitting}
+            className="flex-1 bg-primary text-white hover:bg-primary/90 dark:hover:bg-primary/80"
+          >
+            {submitting ? "Submitting..." : "Submit Shift Total"}
+          </Button>
+        </div>
 
         {/* Daily Total Section */}
         <Card className="border-slate-200 dark:border-slate-800 bg-slate-900 dark:bg-slate-800 text-white mt-6">
