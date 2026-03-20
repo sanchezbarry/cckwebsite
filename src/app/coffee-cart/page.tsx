@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { getCoffeeOrders, saveCoffeeOrders, getDailyOrders, CoffeeOrder } from "@/lib/supabase-db"
 import { format } from "date-fns"
+import { Footer } from "@/components/Footer"
+import Image from "next/image"
 
 interface OrderCounts {
   icedBlack: number
@@ -280,9 +282,14 @@ export default function CoffeeCartPage() {
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
         {/* Header */}
         <div className="flex flex-col gap-2 mb-8">
+          <div className="flex flex-row items-center gap-3">
+                      <a href='/'>
+                      <Image  src="/transparentlogo.png" alt="Church Logo" width={32} height={32} />
+                      </a>
           <h1 className="text-slate-900 dark:text-white text-4xl md:text-5xl font-bold font-display">
-            Coffee Cart Orders
+            Coffee Cart
           </h1>
+          </div>
           <p className="text-slate-600 dark:text-slate-400 text-lg">
            Enter orders here!
           </p>
@@ -563,6 +570,8 @@ export default function CoffeeCartPage() {
           </Button>
         </div>
       </div>
+      <Footer />
     </div>
+    
   )
 }
