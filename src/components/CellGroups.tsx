@@ -17,7 +17,7 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 1,
     title: 'Love @ Bukit Timah',
-    description: 'Meeting for prayer and fellowship in the city center',
+    description: 'Meeting for prayer and fellowship',
     leader: 'Magdalene Chia',
     day: 'Wednesdays',
     time: '7:30pm',
@@ -26,7 +26,7 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 2,
     title: 'Joy @ Simei-Tampines',
-    description: 'College and young adult focused group',
+    description: 'Meeting for prayer and fellowship',
     leader: 'Leonard Lam',
     day: 'Fridays',
     time: '8pm (Fortnightly)',
@@ -35,7 +35,7 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 3,
     title: 'Kindness @ CCK',
-    description: 'Family oriented cell group with children activities',
+    description: 'Bible study and discipleship focused group',
     leader: 'William Loke',
     day: 'Sundays',
     time: '1.30pm (fortnightly)',
@@ -53,7 +53,7 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 5,
     title: 'Love II @ Bukit Timah',
-    description: 'Outreach and mission-minded cell group',
+    description: 'Bible study and discipleship focused group',
     leader: 'Magdalene Chia',
     day: 'Fridays',
     time: '7.30pm (Fortnightly)',
@@ -71,7 +71,7 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 7,
     title: 'Faithfulness @ CCK',
-    description: 'Community service and outreach activities',
+    description: 'Bible study and discipleship focused group',
     leader: 'Shen Soh',
     day: 'Sundays',
     time: '1.30pm(fortnightly)',
@@ -80,7 +80,7 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 8,
     title: 'Doulous @ Bukit Timah',
-    description: 'Focused on prayer and intercession',
+    description: 'Bible study and discipleship focused group',
     leader: 'James & Sharon Ong',
     day: 'Saturdays',
     time: '12pm (noon)',
@@ -89,7 +89,7 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 9,
     title: 'Adelphoi @ Tampines',
-    description: 'Youth and teen focused cell group',
+    description: 'Youth adult focused cell group',
     leader: 'Sanchez & Amanda',
     day: 'Fridays',
     time: '7:30pm',
