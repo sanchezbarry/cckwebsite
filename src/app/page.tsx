@@ -22,8 +22,8 @@ export default function Home() {
         <SermonSeries />
 
         <GetConnected />
-        <Events />
-                <Insta />
+        {/* <Events /> */}
+        <Insta />
         <VisitUs />
 
       </main>

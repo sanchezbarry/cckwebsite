@@ -2,10 +2,13 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export const VisitUs: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
@@ -28,6 +31,11 @@ export const VisitUs: React.FC = () => {
       return;
     }
 
+    if (!recaptchaToken) {
+      setFeedback({ type: 'error', message: 'Please complete the reCAPTCHA verification' });
+      return;
+    }
+
     setLoading(true);
     setFeedback(null);
 
@@ -39,12 +47,16 @@ export const VisitUs: React.FC = () => {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          to_email: 'web@cck.org.sg', // Replace with recipient email
+          to_email: 'administrator@cck.org.sg', // Replace with recipient email
         }
       );
 
       setFeedback({ type: 'success', message: 'Message sent successfully! We\'ll get back to you soon.' });
       setFormData({ name: '', email: '', message: '' });
+      setRecaptchaToken(null);
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
       if (formRef.current) formRef.current.reset();
     } catch (error) {
       console.error('Email send error:', error);
@@ -122,6 +134,13 @@ export const VisitUs: React.FC = () => {
                 {feedback.message}
               </div>
             )}
+            <div className="flex justify-center">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6Lf9cpQsAAAAAKMSsyTFIRW5kV7fJYlx0mg0xlOC"
+                onChange={(token) => setRecaptchaToken(token)}
+              />
+            </div>
             <button 
               type="submit" 
               disabled={loading}

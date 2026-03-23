@@ -101,9 +101,9 @@ export default function Navbar({ alwaysShowBackground = false }: NavbarProps){
               </div>
             ))}
           </div>
-          <button className="bg-primary hover:bg-blue-600 text-white font-display text-sm font-bold h-10 px-6 rounded-full transition-all shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5">
+          {/* <button className="bg-primary hover:bg-blue-600 text-white font-display text-sm font-bold h-10 px-6 rounded-full transition-all shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5">
             Plan a Visit
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile Menu Button */}

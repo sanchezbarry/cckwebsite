@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
               <li><a href="/about-us" className="hover:text-primary hover:translate-x-1 transition-all inline-block">About Us</a></li>
               <li><a href="/sermons" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Sermons</a></li>
               <li><a href="/member" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Member's Page</a></li>
-              <li><a href="#" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Chaplaincy</a></li>
+              <li><a href="/chaplaincy" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Chaplaincy</a></li>
               <li><a href="/events" className="hover:text-primary hover:translate-x-1 transition-all inline-block">Events</a></li>
             </ul>
           </div>
