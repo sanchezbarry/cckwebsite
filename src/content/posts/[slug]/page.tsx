@@ -10,7 +10,7 @@ const reader = createReader(process.cwd(), keystaticConfig);
 export default async function Post({ params }: { params: { slug: string } }) {
   const post = await reader.collections.posts.read(params.slug);
   if (!post) {
-    return <div>No Post Found</div>;
+    return <div>No Event Found</div>;
   }
   const { node } = await post.content();
   const errors = Markdoc.validate(node);
