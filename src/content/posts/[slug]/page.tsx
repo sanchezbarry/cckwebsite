@@ -24,7 +24,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <h1>{post.title}</h1>
       {Markdoc.renderers.react(renderable, React)}
       <hr />
-      <a href={`/posts`}>Back to Events</a>
+      <a href={`/events`}>Back to Events</a>
     </>
   );
 }
