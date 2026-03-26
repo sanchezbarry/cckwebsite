@@ -8,7 +8,7 @@ const leaders = [
     image: "/web1.jpg"
   },
   // {
-  //   name: "Carol Seow",
+  //   name: "Lena Quah",
   //   role: "Administrative Executive",
   //   description: "Ever ready to ensure all is running well at CCK. Our administrator will be glad to hear from you and assist in any way possible.",
   //   image: "/web2.jpg"
@@ -61,7 +61,7 @@ const People: React.FC = () => {
             <div>
               <h3 className="text-lg font-bold text-[#111418] dark:text-white group-hover:text-primary transition-colors">{leader.name}</h3>
               <p className="text-primary text-sm font-bold uppercase tracking-wide mb-1">{leader.role}</p>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed">
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                 {leader.description}
               </p>
             </div>

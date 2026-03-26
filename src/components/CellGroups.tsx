@@ -133,7 +133,7 @@ export default function CellGroups() {
               <CardTitle>{group.title}</CardTitle>
               <CardDescription>{group.description}</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3 flex-grow">
+            <CardContent className="space-y-3 grow">
               <div>
                 <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Leader

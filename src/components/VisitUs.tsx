@@ -44,8 +44,8 @@ export const VisitUs: React.FC = () => {
         'service_6hzu3da', // Replace with your EmailJS service ID
         'template_27xh3iy', // Replace with your EmailJS template ID
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
           to_email: 'administrator@cck.org.sg', // Replace with recipient email
         }
