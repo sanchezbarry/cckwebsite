@@ -18,8 +18,8 @@ export const LatestPosts = async () => {
     <section className="w-full max-w-300 px-4 py-16 md:py-24 mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
         <div>
-          <h2 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold font-display">Latest Posts</h2>
-          <p className="text-slate-500 mt-3 text-lg">Stay up to date with our latest articles and updates.</p>
+          <h2 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold font-display">Latest Events</h2>
+          <p className="text-slate-500 mt-3 text-lg">Stay up to date with our latest events and updates.</p>
         </div>
         <Link 
           href="/events"
@@ -60,7 +60,7 @@ export const LatestPosts = async () => {
                 </h3>
                 <p className="text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
                   {/* Extract a preview from the content - this is a placeholder */}
-                  Read the latest article and updates from our community.
+                  Click for more event details.
                 </p>
                 <Link 
                   href={`/posts/${post.slug}`}

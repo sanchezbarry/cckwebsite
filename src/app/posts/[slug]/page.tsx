@@ -54,7 +54,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
           {post.image && (
             <div className="mb-8 -mx-4 md:mx-0 md:rounded-2xl overflow-hidden aspect-video bg-slate-200 dark:bg-slate-800">
               <Image
-                src={`/${post.image}`}
+                src={post.image}
                 alt={post.title}
                 width={1200} 
                 height={675}

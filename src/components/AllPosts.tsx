@@ -13,8 +13,8 @@ export const AllPosts = async () => {
   return (
     <section className="w-full max-w-300 px-4 py-16 md:py-24 mx-auto">
       <div className="mb-12">
-        <h2 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold font-display mb-3">All Posts</h2>
-        <p className="text-slate-500 dark:text-slate-400 text-lg">Browse all our articles and updates.</p>
+        <h2 className="text-slate-900 dark:text-white text-3xl md:text-4xl font-bold font-display mb-3">All Events</h2>
+        <p className="text-slate-500 dark:text-slate-400 text-lg">Stay up to date with our latest events and updates.</p>
       </div>
 
       {posts.length === 0 ? (
@@ -48,7 +48,7 @@ export const AllPosts = async () => {
                 </h3>
                 <p className="text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
                   {/* Extract a preview from the content - this is a placeholder */}
-                  Read the latest article and updates from our community.
+                  Click for more event details.
                 </p>
                 <Link 
                   href={`/posts/${post.slug}`}
