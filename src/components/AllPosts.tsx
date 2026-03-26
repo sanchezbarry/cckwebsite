@@ -26,7 +26,7 @@ export const AllPosts = async () => {
           {posts.map((post) => (
             <article key={post.slug} className="flex flex-col group cursor-pointer">
               {/* Featured Image */}
-              <div className="overflow-hidden rounded-2xl aspect-4/3 mb-5 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 relative shadow-sm">
+              <div className="overflow-hidden rounded-2xl aspect-4/3 mb-5 bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 relative shadow-sm">
                 {post.entry.image ? (
                   <Image
                     src={post.entry.image}
