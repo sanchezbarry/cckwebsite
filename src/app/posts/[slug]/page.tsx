@@ -9,8 +9,16 @@ import Navbar from "@/components/Navbar";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 
+export async function generateStaticParams() {
+  const posts = await reader.collections.posts.all();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  
   const post = await reader.collections.posts.read(slug);
   if (!post) {
     return (
