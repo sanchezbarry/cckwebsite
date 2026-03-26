@@ -3,7 +3,8 @@ import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
-    kind: process.env.NODE_ENV === 'production' ? 'github' : 'local',
+    // kind: process.env.NODE_ENV === 'production' ? 'github' : 'local',
+    kind: 'github',
     repo: {
       owner: 'sanchezbarry',
       name: 'cckwebsite',
