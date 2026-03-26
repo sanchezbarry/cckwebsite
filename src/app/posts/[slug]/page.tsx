@@ -52,7 +52,6 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
                 height={675}
                 className="w-full h-full object-cover"
                 priority
-                unoptimized
               />
             </div>
           )}
@@ -70,11 +69,11 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
           {/* Back Link */}
           <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
             <Link 
-              href="/events" 
+              href="/posts" 
               className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"
             >
               <span className="material-symbols-outlined text-sm">arrow_left_alt</span>
-              Back to Events
+              Back to Posts
             </Link>
           </div>
         </article>
