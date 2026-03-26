@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 import { Hero } from '@/components/Hero';
@@ -7,6 +5,7 @@ import { SermonSeries } from '@/components/SermonSeries';
 import { RecentMessages } from '@/components/RecentMessages';
 import { GetConnected } from '@/components/GetConnected';
 import { Events } from '@/components/Events';
+import { LatestPosts } from '@/components/LatestPosts';
 import { VisitUs } from '@/components/VisitUs';
 import  {Insta}  from '@/components/InstagramFeed';
 import { Footer } from '@/components/Footer';
@@ -23,6 +22,7 @@ export default function Home() {
 
         <GetConnected />
         {/* <Events /> */}
+        <LatestPosts />
         <Insta />
         <VisitUs />
 
