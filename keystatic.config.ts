@@ -4,11 +4,14 @@ import { config, fields, collection } from '@keystatic/core';
 export default config({
   storage: {
     // kind: process.env.NODE_ENV === 'production' ? 'github' : 'local',
-    kind: 'github',
-    repo: {
-      owner: 'sanchezbarry',
-      name: 'cckwebsite',
-    },
+    kind: 'cloud',
+    // repo: {
+    //   owner: 'sanchezbarry',
+    //   name: 'cckwebsite',
+    // },
+  },
+  cloud: {
+    project: 'cckwebsite/cckwebsite',
   },
   collections: {
     posts: collection({
