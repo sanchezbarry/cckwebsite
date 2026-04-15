@@ -53,6 +53,7 @@ export default function CoffeeCartPage() {
   const [mounted, setMounted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState<{ type: "success" | "error"; text: string } | null>(null)
+  const [autoSaveStatus, setAutoSaveStatus] = useState<"idle" | "saving" | "saved">("idle")
 
   // Initialize Supabase client
   const supabase = createClient(
@@ -96,8 +97,33 @@ export default function CoffeeCartPage() {
       const cached = localStorage.getItem(localStorageKey)
 
       if (cached) {
-        // Use local cache if available
-        setShiftData(JSON.parse(cached))
+        // Use local cache as primary source of truth
+        try {
+          setShiftData(JSON.parse(cached))
+        } catch (error) {
+          console.error("Error parsing localStorage:", error)
+          // Fallback to database
+          const { am, pm } = await getDailyOrders(selectedDate)
+          const newData: ShiftData = {
+            am: am ? {
+              icedBlack: am.icedBlack,
+              hotBlack: am.hotBlack,
+              icedWhite: am.icedWhite,
+              hotWhite: am.hotWhite,
+              espresso: am.espresso,
+              id: am.id,
+            } : defaultOrderCounts,
+            pm: pm ? {
+              icedBlack: pm.icedBlack,
+              hotBlack: pm.hotBlack,
+              icedWhite: pm.icedWhite,
+              hotWhite: pm.hotWhite,
+              espresso: pm.espresso,
+              id: pm.id,
+            } : defaultOrderCounts,
+          }
+          setShiftData(newData)
+        }
       } else {
         // Fetch from DB if no local cache
         const { am, pm } = await getDailyOrders(selectedDate)
@@ -126,6 +152,46 @@ export default function CoffeeCartPage() {
 
     loadData()
   }, [selectedDate])
+
+  // Auto-save to database periodically (every 30 seconds) as backup
+  useEffect(() => {
+    const autoSaveInterval = setInterval(async () => {
+      if (!mounted || !authenticated) return
+      
+      setAutoSaveStatus("saving")
+      try {
+        // Save both AM and PM shifts to database
+        await Promise.all([
+          saveCoffeeOrders({
+            date: selectedDate,
+            shift: "am",
+            icedBlack: shiftData.am.icedBlack,
+            hotBlack: shiftData.am.hotBlack,
+            icedWhite: shiftData.am.icedWhite,
+            hotWhite: shiftData.am.hotWhite,
+            espresso: shiftData.am.espresso,
+          }),
+          saveCoffeeOrders({
+            date: selectedDate,
+            shift: "pm",
+            icedBlack: shiftData.pm.icedBlack,
+            hotBlack: shiftData.pm.hotBlack,
+            icedWhite: shiftData.pm.icedWhite,
+            hotWhite: shiftData.pm.hotWhite,
+            espresso: shiftData.pm.espresso,
+          }),
+        ])
+        setAutoSaveStatus("saved")
+        // Reset status after 2 seconds
+        setTimeout(() => setAutoSaveStatus("idle"), 2000)
+      } catch (error) {
+        console.error("Auto-save failed:", error)
+        setAutoSaveStatus("idle")
+      }
+    }, 30000) // Auto-save every 30 seconds
+
+    return () => clearInterval(autoSaveInterval)
+  }, [shiftData, selectedDate, mounted, authenticated])
 
   // Save data to localStorage whenever it changes (local only)
   useEffect(() => {
@@ -206,13 +272,20 @@ export default function CoffeeCartPage() {
       let message: string
 
       if (shiftToSubmit === "pm") {
-        // For PM shift, fetch AM shift data and include both in message
+        // For PM shift, fetch AM shift data and include both with individual totals
         const amData = await getCoffeeOrders(selectedDate, "am")
         const amTotal = amData ? (amData.icedBlack + amData.hotBlack + amData.icedWhite + amData.hotWhite + amData.espresso) : 0
         const overallTotal = amTotal + totalCups
         const tipsAmount = totalTips ? parseFloat(totalTips) : 0
 
-        message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n📅 Complete Daily Summary:\n\n🌅 AM Shift:\nIced Black: ${amData?.icedBlack || 0}\nHot Black: ${amData?.hotBlack || 0}\nIced White: ${amData?.icedWhite || 0}\nHot White: ${amData?.hotWhite || 0}\nEspresso: ${amData?.espresso || 0}\nAM Total: ${amTotal} cups\n\n🌆 PM Shift:\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\nPM Total: ${totalCups} cups\n\n💵 Tips Collected (PM): $${tipsAmount.toFixed(2)}\n\n📊 Daily Total: ${overallTotal} cups`
+        // Calculate daily totals for each drink type
+        const dailyIcedBlack = (amData?.icedBlack || 0) + orders.icedBlack
+        const dailyHotBlack = (amData?.hotBlack || 0) + orders.hotBlack
+        const dailyIcedWhite = (amData?.icedWhite || 0) + orders.icedWhite
+        const dailyHotWhite = (amData?.hotWhite || 0) + orders.hotWhite
+        const dailyEspresso = (amData?.espresso || 0) + orders.espresso
+
+        message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n📅 Complete Daily Summary:\n\n🌅 AM Shift:\nIced Black: ${amData?.icedBlack || 0}\nHot Black: ${amData?.hotBlack || 0}\nIced White: ${amData?.icedWhite || 0}\nHot White: ${amData?.hotWhite || 0}\nEspresso: ${amData?.espresso || 0}\nAM Total: ${amTotal} cups\n\n🌆 PM Shift:\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\nPM Total: ${totalCups} cups\n\n💵 Tips Collected (PM): $${tipsAmount.toFixed(2)}\n\n📊 Daily Total by Type:\nIced Black: ${dailyIcedBlack}\nHot Black: ${dailyHotBlack}\nIced White: ${dailyIcedWhite}\nHot White: ${dailyHotWhite}\nEspresso: ${dailyEspresso}\n\n📈 Overall Daily Total: ${overallTotal} cups`
       } else {
         // For AM shift, just show current shift data
         message = `☕ Coffee Cart Orders - ${format(new Date(selectedDate), "PPP")}\n\n${shiftToSubmit.toUpperCase()} Shift:\n\nIced Black: ${orders.icedBlack}\nHot Black: ${orders.hotBlack}\nIced White: ${orders.icedWhite}\nHot White: ${orders.hotWhite}\nEspresso: ${orders.espresso}\n\nTotal: ${totalCups} cups`
@@ -322,8 +395,17 @@ export default function CoffeeCartPage() {
             <Label className="block text-sm font-semibold text-slate-900 dark:text-white mb-3">
               Date
             </Label>
-            <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
-              {format(new Date(selectedDate), "PPP")}
+            <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
+              <span>{format(new Date(selectedDate), "PPP")}</span>
+              {autoSaveStatus !== "idle" && (
+                <span className={`text-xs font-semibold px-2 py-1 rounded ${
+                  autoSaveStatus === "saving" 
+                    ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
+                    : "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300"
+                }`}>
+                  {autoSaveStatus === "saving" ? "Saving..." : "Auto-saved ✓"}
+                </span>
+              )}
             </div>
           </div>
         </div>

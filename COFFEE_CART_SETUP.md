@@ -19,6 +19,8 @@ CREATE TABLE coffee_orders (
   iced_white INTEGER DEFAULT 0,
   hot_white INTEGER DEFAULT 0,
   espresso INTEGER DEFAULT 0,
+  total_shift INTEGER DEFAULT 0,
+  total_tips DECIMAL(10, 2) DEFAULT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   UNIQUE(date, shift)
@@ -38,8 +40,19 @@ CREATE INDEX coffee_orders_date_shift_idx ON coffee_orders(date, shift);
 - `iced_white`: Count of iced white coffee
 - `hot_white`: Count of hot white coffee
 - `espresso`: Count of espresso shots
+- `total_shift`: Total cups for the shift (calculated field)
+- `total_tips`: Tips collected during the shift (PM shift only)
 - `created_at`: Timestamp when record was created
 - `updated_at`: Timestamp when record was last modified
+
+### Migration for Existing Tables
+
+If you already have a `coffee_orders` table, add the missing columns:
+
+```sql
+ALTER TABLE coffee_orders ADD COLUMN total_shift INTEGER DEFAULT 0;
+ALTER TABLE coffee_orders ADD COLUMN total_tips DECIMAL(10, 2) DEFAULT NULL;
+```
 
 ### Enable RLS (Row Level Security) - Required Configuration
 

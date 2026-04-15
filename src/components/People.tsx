@@ -13,18 +13,18 @@ const leaders = [
   //   description: "Ever ready to ensure all is running well at CCK. Our administrator will be glad to hear from you and assist in any way possible.",
   //   image: "/web2.jpg"
   // },
-  // {
-  //   name: "Brenda",
-  //   role: "Administrative Executive",
-  //   description: "Ever ready to ensure all is running well at CCK. Our administrator will be glad to hear from you and assist in any way possible.",
-  //   image: "/web3.jpg"
-  // },
-  // {
-  //   name: "Amos Chen",
-  //   role: "Pastoral Worker",
-  //   description: "Seeking to cultivate a vibrant spiritual life in the church through small groups and education so CCK members would be supported to fulfill the Great Commandment (Love God and Man) and the Great Commission (Make Disciples) in their personal lives.",
-  //   image: "/web4.jpg"
-  // },
+  {
+    name: "Brenda",
+    role: "Chaplaincy and Children’s Ministry Worker",
+    description: "Brenda believes that every child is a precious gift from God, uniquely made and deeply loved. She aspires to help children grow in their faith and discover God’s love in a fun, safe, and welcoming environment.",
+    image: "/web3.jpg"
+  },
+  {
+    name: "Amos Chen",
+    role: "Youth Pastor",
+    description: "Seeking to cultivate a vibrant spiritual life in the church through small groups and education so CCK members would be supported to fulfill the Great Commandment (Love God and Man) and the Great Commission (Make Disciples) in their personal lives.",
+    image: "/web4.jpg"
+  },
   //   {
   //   name: "Revd Steven Seah",
   //   role: "Missionary Priest",
@@ -33,7 +33,7 @@ const leaders = [
   // },
   {
     name: "Yvonne Pan",
-    role: "Children’s Ministry Worker",
+    role: "Chaplaincy and Children’s Ministry Worker",
     description: "Walks with every child to develop a heart that loves God. Inculcate godly values to the next generation, inspiring and encouraging them to keep their relationship with God strong and vibrant!",
     image: "/web6.jpg"
   },

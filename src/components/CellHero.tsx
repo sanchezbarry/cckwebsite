@@ -16,10 +16,10 @@ const CellHero: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-2xl mx-auto">
         <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-sm">
-          Who We Are
+          Cell Groups
         </h1>
         <p className="text-white/90 text-lg md:text-xl font-medium max-w-lg mx-auto drop-shadow-sm mt-4">
-          A community dedicated to faith, hope, and love. Join us as we journey together.
+          Find a cell group that'll suit your life stage and interests. Join us for fellowship, growth, and support in our faith journey together.
         </p>
         {/* <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
           <button className="h-12 px-6 bg-primary hover:bg-blue-600 text-white text-base font-bold rounded-lg transition-all hover:scale-105 shadow-md">
