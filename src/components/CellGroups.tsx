@@ -17,11 +17,11 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 1,
     title: 'Love @ Bukit Timah',
-    description: 'Meeting for prayer and fellowship',
+    description: 'Agape Cell is a group of retirees who meet to understand and apply God’s word to our daily lives. especially practising agape love. During our weekly meetings, we have fellowship in sharing God’s blessings in food. After which, we study God’s word besides sharing our blessings and struggles. Before closing,we pray for one another. We welcome any seniors to join us to journey with us in the foot steps of Jesus.',
     leader: 'Magdalene Chia',
-    day: 'Wednesdays',
-    time: '7:30pm',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop',
+    day: 'Wednesdays (Weekly)',
+    time: '7pm',
+    image: '/agapelove.jpeg',
   },
   {
     id: 2,

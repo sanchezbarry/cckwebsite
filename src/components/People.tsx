@@ -7,12 +7,12 @@ const leaders = [
     description: "Revd Bertram has a deep desire to make Scripture come alive for people, and then watch them soar in the Lord.  Other than that, he enjoys most films from Pixar or Dreamworks, and confesses to a soft spot for tea and chocolates (Don't let his doctor find out!).",
     image: "/web1.jpg"
   },
-  // {
-  //   name: "Lena Quah",
-  //   role: "Administrative Executive",
-  //   description: "Ever ready to ensure all is running well at CCK. Our administrator will be glad to hear from you and assist in any way possible.",
-  //   image: "/web2.jpg"
-  // },
+  {
+    name: "Lena Quah",
+    role: "Parish Administrator",
+    description: "Ever ready to ensure all is running well at CCK. Our administrator will be glad to hear from you and assist in any way possible.",
+    image: "/web7.jpg"
+  },
   {
     name: "Brenda",
     role: "Chaplaincy and Children’s Ministry Worker",
