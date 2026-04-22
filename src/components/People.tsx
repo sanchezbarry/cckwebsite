@@ -25,12 +25,12 @@ const leaders = [
     description: "Seeking to cultivate a vibrant spiritual life in the church through small groups and education so CCK members would be supported to fulfill the Great Commandment (Love God and Man) and the Great Commission (Make Disciples) in their personal lives.",
     image: "/web4.jpg"
   },
-  //   {
-  //   name: "Revd Steven Seah",
-  //   role: "Missionary Priest",
-  //   description: "Elena coordinates our music and creative arts, leading the congregation in heartfelt worship every Sunday.",
-  //   image: "/web5.jpg"
-  // },
+    {
+    name: "Revd Steven Seah",
+    role: "Missionary Priest",
+    description: "Rev. Steven is ever thankful for CCK's support over the years which has enabled him to hold the different language groups in the Anglican Church of Cambodia together in fulfilling the mission of reaching the lost and building up the faithful.",
+    image: "/web5.jpg"
+  },
   {
     name: "Yvonne Pan",
     role: "Chaplaincy and Children’s Ministry Worker",
