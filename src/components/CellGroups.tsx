@@ -98,11 +98,11 @@ const CELL_GROUPS: CellGroup[] = [
   {
     id: 10,
     title: 'Youth @ CCK',
-    description: 'Multi-generational fellowship and growth',
+    description: 'The aim of the youth cell group is to grow closer to God and each other through breaking into small groups, digging into God’s word, and sharing life together. Each cell is broken into different age groups so that journey with one another in the same season of life.  We believe that is something spiritual and meaningful in journeying with each other in a small group setting. If you are a youth looking for a community in a similar phase of life, come join us. ',
     leader: 'Amos Chen',
-    day: 'Sundays',
-    time: '9.00am/1.30pm',
-    image: '/agape.jpg',
+    day: 'Saturdays & Sundays (2nd & 4th of the month)',
+    time: 'Sec School: Sundays at 11am to 12.30 pm | JC & Poly: Saturday at 5pm to 7pm | Uni: Sunday at 12.30pm | Youth service on Sunday (1st Sunday) at 12.30pm',
+    image: '/youthcell.jpg',
   },
 ];
 

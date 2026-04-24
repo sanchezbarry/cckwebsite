@@ -11,7 +11,7 @@ const leaders = [
     name: "Lena Quah",
     role: "Parish Administrator",
     description: "Ever ready to ensure all is running well at CCK. Our administrator will be glad to hear from you and assist in any way possible.",
-    image: "/web7.jpg"
+    image: "/web8.jpg"
   },
   {
     name: "Brenda",
@@ -22,7 +22,7 @@ const leaders = [
   {
     name: "Amos Chen",
     role: "Youth Pastor",
-    description: "Seeking to cultivate a vibrant spiritual life in the church through small groups and education so CCK members would be supported to fulfill the Great Commandment (Love God and Man) and the Great Commission (Make Disciples) in their personal lives.",
+    description: "Seeking to cultivate a vibrant spiritual life in the church through small groups, the sharing of God’s word, and simply sharing life with one another, so that CCK members across all generations are supported in fulfilling the Great Commandment (Love God and Man) and the Great Commission (Make Disciples) in their personal lives.",
     image: "/web4.jpg"
   },
     {

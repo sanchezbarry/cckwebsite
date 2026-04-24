@@ -19,16 +19,24 @@ We are challenged to live out our Christian values of Faith, Hope and Love in ou
     <div className="text-lg font-semibold mt-6">Our Mission</div>
 
         <p className="leading-7 not-first:mt-6">
-:: Love God with all our heart, soul, mind and strength (Deut 6:5)
+Love God with all our heart, soul, mind and strength (Deut 6:5)
     </p>
 
             <p className="leading-7 not-first:mt-6">
-:: Love the body of Christ through fellowship, discipleship and service (1 Cor 12:27; Eph 1-13; Gal 5:13)
+Love the body of Christ through fellowship, discipleship and service (1 Cor 12:27; Eph 1-13; Gal 5:13)
 
     </p>
             <p className="leading-7 not-first:mt-6">
-:: Love others by sharing the gospel and our lives (Matt 5:14-16; 29:18-20)
+Love others by sharing the gospel and our lives (Matt 5:14-16; 29:18-20)
 
+    </p>
+
+            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight pt-6">
+      TJC Vision 
+
+    </h4>
+    <p className="leading-7 not-first:mt-6">
+The Joshua Connection Youth (TJC) aims to build up young people in their faith in God, foster close fellowship among the believers, disciple them to love and serve God, and be a witness for Him to others. 
     </p>
     </CardContent>
 </Card>
