@@ -65,7 +65,7 @@ const CELL_GROUPS: CellGroup[] = [
     description: 'Small group focused on spiritual growth',
     leader: 'Sukuna Raj & David Ow',
     day: 'Saturdays',
-    time: '7.30pm (Monthly)',
+    time: '1.30pm (Monthly)',
     image: '/cross.jpg',
   },
   {
