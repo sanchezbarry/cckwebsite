@@ -28,7 +28,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
 
-  const [userType, setUserType] = useState<"member" | "admin" | "coffeecart">("member")
+  const [userType, setUserType] = useState<"member" | "admin" | "coffeecart" | "musicians">("member")
   const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -45,6 +45,7 @@ export function LoginForm({
     member: { email: "cck.socials@gmail.com", label: "Member" },
     admin: { email: "admin@cck.org.sg", label: "Admin" },
     coffeecart: { email: "sanchezbarry@gmail.com", label: "Coffee Cart" },
+    musicians: { email: "copywritermemes@gmail.com", label: "Musicians" },
   }
 
   const currentUser = userCredentials[userType]
@@ -69,7 +70,7 @@ export function LoginForm({
       if (data?.session) {
         setPassword("")
         // Redirect based on user type
-        const redirectPath = userType === "coffeecart" ? "/coffee-cart" : "/members"
+        const redirectPath = userType === "coffeecart" ? "/coffee-cart" : userType === "musicians" ? "/musicians" : "/members"
         window.location.href = redirectPath
       }
     } catch (err) {
@@ -93,7 +94,7 @@ export function LoginForm({
               </div>
               <Field>
                 <FieldLabel htmlFor="userType">User Type</FieldLabel>
-                <Select value={userType} onValueChange={(value) => setUserType(value as "member" | "admin" | "coffeecart")}>
+                <Select value={userType} onValueChange={(value) => setUserType(value as "member" | "admin" | "coffeecart" | "musicians")}>
                   <SelectTrigger id="userType">
                     <SelectValue placeholder="Select user type" />
                   </SelectTrigger>
@@ -101,6 +102,7 @@ export function LoginForm({
                     <SelectItem value="member">Member</SelectItem>
                     <SelectItem value="admin">Admin</SelectItem>
                     <SelectItem value="coffeecart">Coffee Cart</SelectItem>
+                    <SelectItem value="musicians">Musicians</SelectItem>
                   </SelectContent>
                 </Select>
               </Field>

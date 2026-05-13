@@ -48,7 +48,7 @@ const CELL_GROUPS: CellGroup[] = [
     leader: 'Chris Ong',
     day: 'Saturdays (Fortnightly)',
     time: '6.30pm',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
+    image: '/shalom.jpeg',
   },
   {
     id: 5,
@@ -84,7 +84,7 @@ const CELL_GROUPS: CellGroup[] = [
     leader: 'James & Sharon Ong',
     day: 'Saturdays',
     time: '12.30pm (Fortnightly)',
-    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop',
+    image: '/doulous.jpeg',
   },
   {
     id: 9,
