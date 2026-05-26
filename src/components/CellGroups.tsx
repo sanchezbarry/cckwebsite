@@ -30,7 +30,7 @@ const CELL_GROUPS: CellGroup[] = [
     leader: 'Leonard Lam',
     day: '2nd & 4th Fridays (Fortnightly)',
     time: '8pm',
-    image: '/filipinoweb.jpg',
+    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     id: 3,
@@ -93,7 +93,7 @@ const CELL_GROUPS: CellGroup[] = [
     leader: 'Sanchez & Amanda',
     day: 'Fridays (2nd Friday of the month)',
     time: '7:30pm',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
+    image: '/adelphoi.png',
   },
   {
     id: 10,
