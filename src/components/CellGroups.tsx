@@ -30,7 +30,7 @@ const CELL_GROUPS: CellGroup[] = [
     leader: 'Leonard Lam',
     day: '2nd & 4th Fridays (Fortnightly)',
     time: '8pm',
-    image: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: '/joy.jpeg',
   },
   {
     id: 3,
@@ -90,7 +90,7 @@ const CELL_GROUPS: CellGroup[] = [
     id: 9,
     title: 'Adelphoi @ Tampines',
     description: 'Adelphoi is a cell group who come together to learn, grow and support one another in our faith journey. We meet every 2nd Friday of the month to share a meal, fellowship and study God’s word together. We welcome all who are seeking to deepen their relationship with God and build meaningful connections with others.',
-    leader: 'Sanchez & Amanda',
+    leader: 'Sanchez & Amanda Seneviratne',
     day: 'Fridays (2nd Friday of the month)',
     time: '7:30pm',
     image: '/adelphoi.png',
@@ -103,6 +103,15 @@ const CELL_GROUPS: CellGroup[] = [
     day: 'Saturdays & Sundays (2nd & 4th of the month)',
     time: 'Sec School: Sundays at 11am to 12.30 pm | JC & Poly: Saturday at 5pm to 7pm | Uni: Sunday at 12.30pm | Youth service on Sunday (1st Sunday) at 12.30pm',
     image: '/youthcell.jpg',
+  },
+    {
+    id: 11,
+    title: 'Survivors',
+    description: 'Surviving through the hot mess of young adulthood by growing our relationship with God.',
+    leader: 'Janelle Soh',
+    day: 'Saturday, once a month',
+    time: 'evening',
+    image: '/survivors.jpeg',
   },
 ];
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const leaders = [
   {
-    name: "Rev. Bertram",
+    name: "Rev. Bertram Cheong",
     role: "Vicar",
     description: "Revd Bertram has a deep desire to make Scripture come alive for people, and then watch them soar in the Lord.  Other than that, he enjoys most films from Pixar or Dreamworks, and confesses to a soft spot for tea and chocolates (Don't let his doctor find out!).",
     image: "/web1.jpg"
@@ -14,7 +14,7 @@ const leaders = [
     image: "/web8.jpg"
   },
   {
-    name: "Brenda",
+    name: "Brenda Zhou",
     role: "Chaplaincy and Children’s Ministry Worker",
     description: "Brenda believes that every child is a precious gift from God, uniquely made and deeply loved. She aspires to help children grow in their faith and discover God’s love in a fun, safe, and welcoming environment.",
     image: "/web3.jpg"
@@ -26,7 +26,7 @@ const leaders = [
     image: "/web4.jpg"
   },
     {
-    name: "Revd Steven Seah",
+    name: "Rev. Steven Seah",
     role: "Missionary Priest",
     description: "Rev. Steven is ever thankful for CCK's support over the years which has enabled him to hold the different language groups in the Anglican Church of Cambodia together in fulfilling the mission of reaching the lost and building up the faithful.",
     image: "/web5.jpg"
