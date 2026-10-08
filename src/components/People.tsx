@@ -31,12 +31,6 @@ const leaders = [
     description: "Rev. Steven is ever thankful for CCK's support over the years which has enabled him to hold the different language groups in the Anglican Church of Cambodia together in fulfilling the mission of reaching the lost and building up the faithful.",
     image: "/web5.jpg"
   },
-  {
-    name: "Yvonne Pan",
-    role: "Chaplaincy and Children’s Ministry Worker",
-    description: "Walks with every child to develop a heart that loves God. Inculcate godly values to the next generation, inspiring and encouraging them to keep their relationship with God strong and vibrant!",
-    image: "/web6.jpg"
-  },
 ];
 
 const People: React.FC = () => {
